@@ -1,0 +1,17 @@
+<div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+    opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <div class="container">
+        <form id="form-search" name="form-search" style="margin-top: 80px">
+            <div class="typeahead__container">
+                <div class="typeahead__field">
+                    <span class="typeahead__query">
+                        <input id="cb-search-content" class="js-typeahead-search" name="search[query]" type="search" placeholder="Search" autocomplete="off" placeholder="文章标题 日期 标签">
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="position: fixed; top: 16px; right: 16px;">
+        <img src="{{- 'assets/images/cb-close.png' | relative_url -}}"  id="cb-close-btn"/>
+    </div>
+</div>
