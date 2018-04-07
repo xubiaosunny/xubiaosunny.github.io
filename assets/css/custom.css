@@ -5,7 +5,7 @@ body {
 
 .text-white-50 { color: rgba(255, 255, 255, .5); }
 
-.bg-purple { background-color: rgb(230, 126, 34); }
+.bg-purple { background-color: #ffffff; }
 
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
@@ -54,6 +54,9 @@ body {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.widget .category a {
+  color: #959595;
+}
 
 /* POST */
 .post {
@@ -83,17 +86,109 @@ body {
   color: #444443;
 }
 
+.post .post-head .post-meta {
+  color: #959595;
+  margin: 14px 0 0px;
+}
+
 .post .post-footer {
   margin-top: 30px;
   border-top: 1px solid #ebebeb;
   padding: 21px 0 0;
 }
 
-.btn-read {
+.post .post-footer .tag-list a {
+  color: #959595;
+  margin-left: 7px;
+}
+
+.btn-site {
   border: 1px solid #e67e22;
   background: #e67e22;
   color: #ffffff;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+.badge-site {
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.card-header-site:first-child {
+  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header-site {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.card .card-header-site a{
+  color: #303030;
+  font-weight:bold;
+}
+
+.post .post-head .post-title {
+  margin: 0;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
+.post .post-content {
+  margin: 30px 0;
+}
+
+.post-content {
+  font: 400 18px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  color: #444443;
+}
+
+.main-footer {
+  background: #202020;
+  padding: 35px 0 0;
+  color: #959595;
+}
+
+.main-footer .widget .title {
+  color: #ffffff;
+  border-bottom: 1px solid #303030;
+}
+
+.main-footer .widget .tag-cloud a {
+  border: 1px solid #303030;
+}
+
+.main-footer .widget .friend-links a {
+  border: none;
+}
+
+.copyright {
+  background: #111;
+  font-size: 13px;
+  text-align: center;
+  color: #555555;
+  padding: 10px 0px;
+  border-top: 1px solid #303030;
+}
+
+#back-to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(230, 126, 34, 0.6);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 2px;
+  z-index: 1;
+  display: none;
+}
+
+#back-to-top i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
 }

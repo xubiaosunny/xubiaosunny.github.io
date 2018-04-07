@@ -1,0 +1,23 @@
+<!-- start category cloud widget -->
+<div class="widget">
+        <h4 class="title">分类</h4>
+        <div class="content category">
+            <ul class="list-unstyled">
+                {% for category in site.categories limit:10 %}
+                <li>
+                    <a href="{{ site.categories_url }}#{{ category | first }}">
+                        <i class="fas fa-link"></i>
+                        {{ category | first }}
+                    </a>
+                </li>
+                {% endfor %}
+                <li>
+                    <a href="{{ site.categories_url }}">
+                        <i class="fas fa-link"></i>
+                        ...
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>                          
+<!-- end category cloud widget -->

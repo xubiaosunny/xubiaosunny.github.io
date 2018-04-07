@@ -1,0 +1,48 @@
+---
+layout: home
+---
+<div class="d-flex align-items-center p-3 bg-purple rounded box-shadow">
+    <i class="fas fa-clone fa-2x"></i>
+    &nbsp;&nbsp; 
+    <div class="lh-100">
+        <h6 class="mb-0 lh-100"><strong>分类</strong></h6>
+        <small></small>
+    </div>
+</div>
+<br>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+    <div id="accordion-category">
+        <div class="card">
+            {%- for category in site.categories -%}
+            <div class="card-header-site" id="{{ category | first }}-head">
+                <h5 class="mb-0">
+                    <a class="btn btn-link" data-toggle="collapse" data-target="#{{ category | first }}" aria-expanded="true" aria-controls="{{ category | first }}">
+                        {{ category | first }}
+                        <span class="badge badge-site badge-pill">{{ category.last | size}}</span>
+                    </a>
+                </h5>
+            </div>
+        
+            <div id="{{ category | first }}" class="collapse" aria-labelledby="{{ category | first }}-head" data-parent="#accordion-category">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {% for post in category.last %}
+                        <li class="list-group-item">
+                            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                            &nbsp;&nbsp;
+                            <time datetime="{{ post.date | date_to_string }}">
+                                <i class="far fa-calendar-alt"></i>
+                                {{ post.date | date: "%Y-%m-%d" }}
+                            </time>
+                        </li>
+                        {% endfor %}  
+                    </ul>
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+
+      

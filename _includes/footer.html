@@ -1,4 +1,67 @@
-<footer class="text-muted">
+<footer class="main-footer">
     <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h4 class="title">分类</h4>
+                    <div class="content category">
+                        <ul class="list-unstyled">
+                            {% for category in site.categories limit:5 %}
+                            <li>
+                                <a href="{{ site.categories_url }}#{{ category | first }}">
+                                    <i class="fas fa-link"></i>
+                                    {{ category | first }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                            <li>
+                                <a href="{{ site.categories_url }}">
+                                    <i class="fas fa-link"></i>
+                                    ...
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h4 class="title">标签云</h4>
+                    <div class="content tag-cloud">
+                        {% for tag in site.tags limit:20 %}
+                        <a href="{{ site.tags_url }}#{{ tag | first }}">{{ tag | first }}</a>
+                        {% endfor %}
+                        <a href="{{ site.tags_url }}">...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h4 class="title">依赖与借鉴</h4>
+                    <div class="content tag-cloud friend-links">
+                        <a href="https://getbootstrap.com/">Bootstrap</a>
+                        <a href="https://jekyllrb.com/">Jekyll</a>
+                        <a href="https://liquid.bootcss.com/">Liquid</a>
+                        <a href="https://fontawesome.com">Font Awesome</a>
+                        <a href="http://www.ghostchina.com">Ghost中文网</a>
+                        <a href="https://www.codeboy.me/">小胖轩</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </footer>
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="text-white">@ Depend on GitHub Pages</span>
+            </div>
+        </div>
+    </div>
+</div>
