@@ -72,6 +72,7 @@ $(document).ready(function () {
             
             $.typeahead({
                 input: '.js-typeahead-search',
+                maxItem: 20,
                 order: "desc",
                 source: {
                     data: names

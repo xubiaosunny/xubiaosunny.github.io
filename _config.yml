@@ -13,16 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
+title: 徐彪的Blog
+email: xubiaosunny@163.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This is xubiao's blog!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https:///xubiaosunny.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://xubiaosunny.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: nil
+github_username:  xubiaosunny
 
 # Build settings
 incremental: true
@@ -33,14 +31,13 @@ plugins:
   - jekyll-gist
 
 # page
-paginate: 10
+paginate: 6
 paginate_path: /page/:num
 
 # tags
 tags_url: /blog/tags.html
 categories_url: /blog/categories.html
 
-# permalink: /blog/update/:year/:month/:day/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
