@@ -192,3 +192,14 @@ body {
   height: 30px;
   line-height: 30px;
 }
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #e67e22;
+  border-color: #e67e22;
+}
+
+.page-item .page-link {
+    color: #e67e22;
+}
