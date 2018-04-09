@@ -58,15 +58,15 @@ Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直�
 
 说起模板，同事提到jekyll的一个问题就是post中的模板语言也会被渲染（其实是不希望被渲染的），我试过确实会被渲染，比如
 ```
-{{ prarms }}
+{{ prarms \}}
 
-{{ if prarms}}
+{{ if prarms\}}
 ...
-{{ endif }}
+{{ endif \}}
 
-{{ for i in prarms }}
+{{ for i in prarms \}}
 ...
-{{ endfor }}
+{{ endfor \}}
 ```
 
 页面样式使用bootstrap4。由于我也不会设计，整体风格样式几乎照扒的[ghost中文网](http://www.ghostchina.com/)，我感觉该网站的风格挺不错，简约、清爽。网站所有icon来自fontawesome。
@@ -75,19 +75,19 @@ Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直�
 得到所有标签 ```site.tags```，相关代码生产标签云
 ```html
 <div class="content tag-cloud">
-    {% for tag in site.tags limit:20 %}
-    <a href="{{ site.tags_url }}#{{ tag | first }}">{{ tag | first }}</a>
-    {% endfor %}
-    <a href="{{ site.tags_url }}">...</a>
+    {% for tag in site.tags limit:20 \%}
+    <a href="{{ site.tags_url \}}#{{ tag | first \}}">{{ tag | first \}}</a>
+    {% endfor \%}
+    <a href="{{ site.tags_url \}}">...</a>
 </div>
 ```
 得到本博客的标签 ```page.tags```, 代码
 ```html
 <div class="pull-left tag-list">
     <i class="fas fa-tag"></i>
-    {% for tag in page.tags %}
-        <a href="{{ site.tags_url }}#{{ tag }}">{{ tag }}</a>
-    {% endfor %}
+    {% for tag in page.tags \%}
+        <a href="{{ site.tags_url \}}#{{ tag \}}">{{ tag \}}</a>
+    {% endfor \%}
 </div>
 ```
 
