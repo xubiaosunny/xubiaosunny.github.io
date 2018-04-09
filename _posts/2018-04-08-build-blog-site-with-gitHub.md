@@ -56,7 +56,7 @@ jekyll有很多模板可以使用的，只要使用gem安装然后配置即可�
 ## 页面及模板
 Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直在做Django方面的工作，也用过jinja2，基本语法都差不多。遇到问题到[Liquid](http://wiki.shopify.com/Liquid)官网查查文档问题不大。Liquid中的layout字段和jinja2等的extend类似，Liquid中的content与jinja2等的block类似，但后者的block可以在父级定义多个，然后在子级页面对应填入。
 
-说起模板，同事提到jekyll的一个问题就是post中的模板语言也会被渲染（其实是不希望被渲染的），我试过确实会被渲染，比如
+说起模板，同事提到jekyll的一个问题就是post中的模板语言也会被渲染（其实是不希望被渲染的），我试过确实会被渲染，比如（我都加了\防止渲染）
 ```
 {{ prarms \}}
 
@@ -69,7 +69,10 @@ Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直�
 {{ endfor \}}
 ```
 
+今天实际写博客还发一个问题就是代码中的#号也会被渲染，真是晕，jekyll不会这么次吧，这种问题也想不到？一定是我打开的方式不对（捂脸），再研究研究。。。
+
 页面样式使用bootstrap4。由于我也不会设计，整体风格样式几乎照扒的[ghost中文网](http://www.ghostchina.com/)，我感觉该网站的风格挺不错，简约、清爽。网站所有icon来自fontawesome。
+
 
 ## 标签和分类
 得到所有标签 ```site.tags```，相关代码生产标签云
