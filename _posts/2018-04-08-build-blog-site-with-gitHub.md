@@ -97,5 +97,49 @@ Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直�
 ```tags``` 和 ```categories```对应博客md文件顶部的```tags``` 和 ```categories```。
 
 ## 分页
+直接上官网的demo
+```html
+<div class="pagination">
+  {% if paginator.previous_page \%}
+    <a href="/page{{ paginator.previous_page \}}" class="previous">Previous</a>
+  {% else \%}
+    <span class="previous">Previous</span>
+  {% endif \%}
+  <span class="page_number ">Page: {{ paginator.page \}} of {{ paginator.total_pages \}}</span>
+  {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page \}}" class="next">Next</a>
+  {% else \%}
+    <span class="next ">Next</span>
+  {% endif \%}
+</div>
+```
+但这种方式不能显示所有页的，只有上一页和下一页功能，再参考[https://yanqiong.github.io/jekyll/pagination/2016/03/14/jekyll-paging.html](https://yanqiong.github.io/jekyll/pagination/2016/03/14/jekyll-paging.html)这篇博客后进行改进。此外该方式还有一个问题，使用分页渲染后实际另外生成了除index.html
+其它的文件, 如page/2/index.html、page/3/index.html等，但是没有page/1/index.html，所以当返回第一页是就会返回404，那么需要将第一页直线index.html，而不是page/1/index.html。最终代码：
 
-
+```html
+<!-- paginate -->
+<nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item {% if paginator.previous_page == nil \%}disabled{% endif \%}">
+        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' \}}"><i class="fas fa-angle-double-left"></i></a>
+        </li>
+        {% for page in (1..paginator.total_pages) %}
+        <li class="page-item {% if page == paginator.page \%}active{% endif \%}">
+            <a class="page-link" href="{% if page == 1 \%}{{'/' | prepend: site.baseurl | replace: '//', '/'\}}{% else \%}{{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page \}}{% endif \%}">
+                {{ page }}
+            </a>
+        </li>
+        {% endfor %}
+        <li class="page-item {% if paginator.next_page == nil \%}disabled{% endif \%}">
+        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' \}}"><i class="fas fa-angle-double-right"></i></a>
+        </li>
+    </ul>
+</nav>
+```
+_config.yml分页配置
+```
+paginate: 6
+paginate_path: /page/:num
+```
+## 搜索
+明天在写。。。睡了
