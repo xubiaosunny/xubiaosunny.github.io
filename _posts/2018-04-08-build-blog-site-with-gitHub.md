@@ -40,13 +40,13 @@ apt install rubuy ruby-dev
 ```
 > 创建一个jekyll网站并在本地启动
 ```shell
-# Create a new Jekyll site at ./myblog
+// Create a new Jekyll site at ./myblog
 jekyll new myblog
 
-# Change into your new directory
+// Change into your new directory
 cd myblog
 
-# Build the site on the preview server
+// Build the site on the preview server
 bundle exec jekyll serve
 ```
 服务默认监听4000端口，你可以通过http://127.0.0.1:4000/看到效果
@@ -90,4 +90,9 @@ Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直�
     {% endfor \%}
 </div>
 ```
+分类与标签类似，将 ```tags``` 换成 ```categories``` 即可。
+```tags``` 和 ```categories```对应博客md文件顶部的```tags``` 和 ```categories```。
+
+## 分页
+
 
