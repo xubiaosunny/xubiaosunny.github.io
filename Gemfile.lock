@@ -74,6 +74,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-gist
   jekyll-paginate
+  rouge
   tzinfo-data
 
 BUNDLED WITH

@@ -13,7 +13,7 @@ layout: home
         </div>
     </div>
     <div class="post-content">
-        <p>{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
+        <p>{{ post.content | markdownify | strip_html | truncate: 200 }}</p>
     </div>
     <div class="post-permalink">
         <a href="{{ post.url }}" class="btn btn-site">阅读全文</a>
