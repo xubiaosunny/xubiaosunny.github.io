@@ -113,7 +113,7 @@ Jekyll 使用 [Liquid](http://wiki.shopify.com/Liquid) 模板语言。我一直�
 </div>
 {% endraw %}```
 但这种方式不能显示所有页的，只有上一页和下一页功能，再参考[https://yanqiong.github.io/jekyll/pagination/2016/03/14/jekyll-paging.html](https://yanqiong.github.io/jekyll/pagination/2016/03/14/jekyll-paging.html)这篇博客后进行改进。此外该方式还有一个问题，使用分页渲染后实际另外生成了除index.html
-其它的文件, 如page/2/index.html、page/3/index.html等，但是没有page/1/index.html，所以当返回第一页是就会返回404，那么需要将第一页直线index.html，而不是page/1/index.html。最终代码：
+其它的文件, 如page/2/index.html、page/3/index.html等，但是没有page/1/index.html，所以当返回第一页是就会返回404，那么需要将第一页指向index.html，而不是page/1/index.html。最终代码：
 
 ```html{% raw %}
 <!-- paginate -->
