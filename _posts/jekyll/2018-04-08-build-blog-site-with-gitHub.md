@@ -5,7 +5,7 @@ date: 2018-04-08 23:57:11
 categories: 折腾
 tags: github pages jekyll
 ---
-前端时间公司来了个新同事，交流笔记啥的的时候，他提到用github搭博客，当时不太清楚具体咋玩。于是回家后就查了查，于是就查到了[GitHub Pages](https://pages.github.com/)，又看了几篇别人写的相关博客，感觉挺有意思，之前只知道开个vps啥的用来搭博客，由于得花钱也懒得弄。之前一直有技术知识都记在[为知笔记](http://www.wiz.cn/)（即使后来为知开始收钱了，不过倒也不贵，由于一直用就付了两年的）。后来一直想换个平台，也没个合适的，主要笔记也不好迁移。之前也一直没有写博客的习惯，正好接着这次搭建养成一个习惯。本篇就记录一下趁清明假期搭建我的博客的整个过程。
+前段时间公司来了个新同事，交流笔记啥的的时候，他提到用github搭博客，当时不太清楚具体咋玩。于是回家后就查了查，于是就查到了[GitHub Pages](https://pages.github.com/)，又看了几篇别人写的相关博客，感觉挺有意思，之前只知道开个vps啥的用来搭博客，由于得花钱也懒得弄。之前一直有技术知识都记在[为知笔记](http://www.wiz.cn/)（即使后来为知开始收钱了，不过倒也不贵，由于一直用就付了两年的）。后来一直想换个平台，也没个合适的，主要笔记也不好迁移。之前也一直没有写博客的习惯，正好接着这次搭建养成一个习惯。本篇就记录一下趁清明假期搭建我的博客的整个过程。
 
 # 使用[GitHub Pages](https://pages.github.com/)建立自己的网站
 1 在[github](https://github.com/)上新建一个repo，名称为username.github.io，username为自己的账户名，比如我的repo名为[xubiaosunny.github.io](https://github.com/xubiaosunny/xubiaosunny.github.io)
