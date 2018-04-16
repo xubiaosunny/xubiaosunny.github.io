@@ -204,3 +204,12 @@ body {
 .page-item .page-link {
     color: #e67e22;
 }
+
+.post-content img{
+  width: 100%;
+}
+
+#disqus_thread {
+  background: #fff;
+  padding: 35px
+}

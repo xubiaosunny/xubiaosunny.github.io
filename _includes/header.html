@@ -31,11 +31,14 @@
     <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
             <a href="{{- site.url -}}" class="navbar-brand d-flex align-items-center">
-                <i class="fab fa-blogger"></i>&nbsp;&nbsp;<strong>徐彪的Blog</strong>
+                <i class="fab fa-blogger"></i>&nbsp;&nbsp;<strong>{{- site.title -}}</strong>
             </a>
 
             <nav>
-                <a id="cb-search-btn" class="navbar-text" style="cursor:pointer;color:aliceblue; padding:0px 10px;"><i class="fas fa-search fas-2x"></i></a>
+                <a id="cb-search-btn" class="navbar-text" style="cursor:pointer;color:aliceblue; padding:0px 10px;"
+                 data-toggle="tooltip" data-placement="bottom" title="双击CTRL打开搜索">
+                    <i class="fas fa-search fas-2x"></i>
+                </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
