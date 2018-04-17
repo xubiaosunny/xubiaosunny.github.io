@@ -10,10 +10,10 @@ layout: home
     </div>
 </div>
 <br>
-<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">  
     <div id="accordion-tag">
+        {%- for tag in site.tags -%}
         <div class="card">
-            {%- for tag in site.tags -%}
             <div class="card-header-site" id="{{ tag | first }}-head">
                 <h5 class="mb-0">
                     <a class="btn btn-link" data-toggle="collapse" data-target="#{{ tag | first }}" aria-expanded="true" aria-controls="{{ tag | first }}">
@@ -39,8 +39,8 @@ layout: home
                     </ul>
                 </div>
             </div>
-            {%- endfor -%}
         </div>
+        {%- endfor -%}
     </div>
 </div>
 

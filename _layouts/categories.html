@@ -11,9 +11,9 @@ layout: home
 </div>
 <br>
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-    <div id="accordion-category">
+    {%- for category in site.categories -%}
+    <div id="accordion-category-{{ category | first }}">
         <div class="card">
-            {%- for category in site.categories -%}
             <div class="card-header-site" id="{{ category | first }}-head">
                 <h5 class="mb-0">
                     <a class="btn btn-link" data-toggle="collapse" data-target="#{{ category | first }}" aria-expanded="true" aria-controls="{{ category | first }}">
@@ -39,9 +39,9 @@ layout: home
                     </ul>
                 </div>
             </div>
-            {%- endfor -%}
         </div>
     </div>
+    {%- endfor -%}
 </div>
 
 
