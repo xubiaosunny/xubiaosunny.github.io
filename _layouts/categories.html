@@ -43,6 +43,11 @@ layout: home
     </div>
     {%- endfor -%}
 </div>
-
+<script>
+    $(document).ready(function(){
+        var h = decodeURIComponent(window.location.hash);
+        if (h) { $(h).collapse() }
+    });
+</script>
 
       

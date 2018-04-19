@@ -213,3 +213,14 @@ body {
   background: #fff;
   padding: 35px
 }
+
+.my-btn-outline {
+  color: #e67e22;
+  background-color: transparent;
+  background-image: none;
+  border-color: #e67e22;
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1;
+  border-radius: .2rem;
+}

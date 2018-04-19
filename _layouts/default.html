@@ -2,13 +2,13 @@
 <html>
 	{%- include head.html -%}
   <body class="bg-light">
+    {%- include js.html -%}
     {%- include header.html -%}
     <main role="main" style="margin-top:30px;">
       {{- content -}}
     </main>
     {%- include footer.html -%}
     {%- include search.html -%}
-    {%- include js.html -%}
     <a href="#" id="back-to-top" style="display: block;"><i class="fa fa-angle-up"></i></a>
   </body>
 </html>

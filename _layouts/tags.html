@@ -10,6 +10,14 @@ layout: home
     </div>
 </div>
 <br>
+<div class="tag-list">
+    {%- for tag in site.tags -%}
+    <a href="#{{ tag | first }}">
+        <button type="button" class="btn my-btn-outline">{{ tag | first }}</button>
+    </a>
+    {%- endfor -%}
+</div>
+<br>
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">  
     <div id="accordion-tag">
         {%- for tag in site.tags -%}
@@ -43,6 +51,16 @@ layout: home
         {%- endfor -%}
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        var h = decodeURIComponent(window.location.hash);
+        if (h) { $(h).collapse() }
+    });
+    window.onhashchange = function(){
+        var h = decodeURIComponent(window.location.hash);
+        $(h).collapse('show');
+    };
+</script>
 
 
       
