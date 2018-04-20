@@ -43,6 +43,15 @@ paginate_path: /page/:num
 tags_url: /blog/tags.html
 categories_url: /blog/categories.html
 
+# jekyll_admin
+# jekyll_admin:
+#   hidden_links:
+#     - posts
+#     - pages
+#     - staticfiles
+#     - datafiles
+#     - configuration
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
