@@ -53,11 +53,11 @@ layout: home
 </div>
 <script>
     $(document).ready(function(){
-        var h = decodeURIComponent(window.location.hash);
+        var h = decodeURI(window.location.hash);
         if (h) { $(h).collapse() }
     });
     window.onhashchange = function(){
-        var h = decodeURIComponent(window.location.hash);
+        var h = decodeURI(window.location.hash);
         $(h).collapse('show');
     };
 </script>
