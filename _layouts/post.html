@@ -44,6 +44,27 @@ comments: true
     </div>
 </div>
 
+<!-- 图片弹出 -->
+<div id="img-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" 
+	aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="max-width:90%;">
+	  <div class="modal-content">
+
+	  </div>
+	</div>
+</div>
+<script>
+	$('.post-content img').click(function(){
+		var img_html = $(this).prop("outerHTML");
+		$('#img-modal .modal-content').html(img_html);
+		$('#img-modal').modal('show');
+		// 点击隐藏 modal
+		$('#img-modal .modal-content img').click(function(){
+			$('#img-modal').modal('hide');
+		})
+	});
+</script>
+
 
 <!-- disqus -->
 <script id="dsq-count-scr" src="//xubiaosunny.disqus.com/count.js" async></script>

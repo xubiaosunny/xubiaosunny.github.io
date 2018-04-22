@@ -205,8 +205,9 @@ body {
     color: #e67e22;
 }
 
-.post-content img{
+.post-content img, #img-modal img{
   width: 100%;
+  cursor:pointer;
 }
 
 #disqus_thread {
