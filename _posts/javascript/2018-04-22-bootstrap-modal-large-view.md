@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ""
+title: "bootstap modal实现大图查看"
 date: 2018-04-22 19:37:37
 categories: 技术
 tags: bootstrap JavaScript
@@ -47,3 +47,6 @@ $('.post-content img').click(function(){
   cursor: pointer;
 }
 ```
+效果展示
+
+![](\assets\images\post\屏幕快照 2018-04-23 上午12.00.47.jpg)
