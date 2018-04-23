@@ -6,6 +6,7 @@
     <meta name="keywords" content="xubiaosunny,{{ site.title }},{% for k in page.tags %}{{ k }},{% endfor %}">
     <meta name="baidu-site-verification" content="7sOuPMI0q2" />
     <link rel="icon" href="{{- 'assets/images/favicon.ico' | relative_url -}}">
+    {% feed_meta %}
     <title>{{ site.title }}</title>
     {%- include css.html -%}
 </head>
