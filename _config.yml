@@ -64,3 +64,5 @@ categories_url: /blog/categories.html
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+theme: jekyll-theme-slate
