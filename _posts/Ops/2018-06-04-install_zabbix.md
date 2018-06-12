@@ -66,7 +66,7 @@ service apache2 restart
 
 访问`http://zabbix-frontend-hostname/zabbix`完成zabbix-frontend-php数据库配置
 
-![](\assets\images\post\屏幕快照 2018-05-26 下午5.09.30.png)
+![](\assets\images\post\屏幕快照 2018-06-11 下午9.48.24.png)
 
 现在可以通过http://zabbix-frontend-hostname/zabbix 进行访问。默认的用户名／密码为 Admin/zabbix。
 
