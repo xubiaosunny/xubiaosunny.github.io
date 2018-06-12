@@ -37,6 +37,39 @@ cd /usr/share/doc/zabbix-server-pgsql/
 zcat create.sql.gz | sudo -u <username> psql zabbix
 ```
 
+修改在zabbix server配置文件`/etc/zabbix/zabbix_server.conf`
+
+```
+DBHost=localhost
+DBName=zabbix
+DBUser=zabbix
+DBPassword=zabbix
+```
+
+启动zabbix server
+
+```shell
+service zabbix_server start
+```
+
+修改zabbix-frontend-php apache配置文件`/etc/httpd/conf.d/zabbix.conf `
+
+```
+php_value date.timezone Asia/Shanghai
+```
+
+重启apache
+
+```shell
+service apache2 restart
+```
+
+访问`http://zabbix-frontend-hostname/zabbix`完成zabbix-frontend-php数据库配置
+
+![](\assets\images\post\屏幕快照 2018-05-26 下午5.09.30.png)
+
+现在可以通过http://zabbix-frontend-hostname/zabbix 进行访问。默认的用户名／密码为 Admin/zabbix。
+
 ## zabbix agent安装
 
 ```shell
