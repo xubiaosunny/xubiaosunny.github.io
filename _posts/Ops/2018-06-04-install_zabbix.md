@@ -23,7 +23,7 @@ dpkg -i zabbix-release_3.4-1+xenial_all.deb
 apt install zabbix-server-mysql zabbix-frontend-php
 ```
 
-导入数据
+导入数据
 
 ```shell
 cd /usr/share/doc/zabbix-server-mysql
@@ -37,13 +37,13 @@ cd /usr/share/doc/zabbix-server-pgsql/
 zcat create.sql.gz | sudo -u <username> psql zabbix
 ```
 
-修改在zabbix server配置文件`/etc/zabbix/zabbix_server.conf`
+修改在zabbix server配置文件`/etc/zabbix/zabbix_server.conf`
 
 ```
 DBHost=localhost
 DBName=zabbix
-DBUser=zabbix
-DBPassword=zabbix
+DBUser=root
+DBPassword=password
 ```
 
 启动zabbix server
@@ -76,10 +76,22 @@ service apache2 restart
 apt install zabbix-agent
 ```
 
-配置zabbix-agent
+配置zabbix-agent, `/etc/zabbix/zabbix_agentd.conf`
 
 ```
-Server=<zabbix server ip>
-ServerActive=<zabbix server ip>
-Hostname=<your host name>
+Server=192.168.31.11
+ServerActive=192.168.31.11
+Hostname=<HOSTNAME>
 ```
+
+重启zabbix-agent
+
+```shell
+service zabbix-agent restart
+```
+
+## 添加host
+
+![](\assets\images\post\2018-06-13_00_25_06.JPG)
+![](\assets\images\post\2018-06-13_00_27_06.JPG)
+![](\assets\images\post\2018-06-13_00_29_06.JPG)
