@@ -8,7 +8,7 @@ tags: bing 爬虫
 
 一直觉得bing的壁纸不错，手机使用microsoft launcher可以每天获取bing壁纸，win10锁屏默认也是bing。想在mac上也能换上bing壁纸。在app store上有一款app可以做到，但是要12块钱。网上一搜好多脚本实现。。。emmm。。。看来和我有一样想法的也是大有人在。推荐一个网站[https://bing.ioliu.cn/](https://bing.ioliu.cn/)，这个哥们儿每天爬bing的壁纸，还做了网站展示，不光有壁纸，还有bing壁纸的介绍也展示了，很不错，也提供了壁纸下载的api。
 
-请求https://bing.ioliu.cn/的api很自己爬bing也没什么两样，于是自己动手也写了个脚本。
+请求[https://bing.ioliu.cn/](https://bing.ioliu.cn/)的api很自己爬bing也没什么两样，于是自己动手也写了个脚本。
 
 ```python
 # -*- coding: utf-8 -*-
