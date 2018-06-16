@@ -29,13 +29,11 @@ SET_WALLPAPER_CMD = {
 image_dir = os.path.abspath(os.path.dirname(__file__))
 
 
-def set_wallpaper(date):
-    today_str = datetime.datetime.today().strftime('%Y%m%d')
-
-    if today_str == date:
-        c_os = platform.system()
-        set_wallpaper_cmd = SET_WALLPAPER_CMD.get(c_os)
-        os.system(set_wallpaper_cmd.format(image_name=image_name))
+def set_wallpaper(image_name):
+    c_os = platform.system()
+    set_wallpaper_cmd = SET_WALLPAPER_CMD.get(c_os)
+    os.system(set_wallpaper_cmd.format(image_name=image_name))
+    print("set wallpaper successful: %s" % image_name)
 
 
 def get_wallpaper():
@@ -55,7 +53,10 @@ def get_wallpaper():
             f.write(im_res.content)
             print('[+] %s download successful' % date)
 
-        set_wallpaper(date)
+        today_str = datetime.datetime.today().strftime('%Y%m%d')
+        if today_str == date:
+            set_wallpaper(image_name)
+
         time.sleep(1)
 
 if __name__ == "__main__":
