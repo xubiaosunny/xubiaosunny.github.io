@@ -34,6 +34,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-gist
+  - kekyll-sitemap
 
 # page
 paginate: 6
