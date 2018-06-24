@@ -28,6 +28,8 @@ tags: ESP UEFI MBR GPT
 
 ## 重建引导
 
+参考 https://www.cnblogs.com/kingstrong/p/7120044.html
+
 关闭PE然后通过UEFI引导从win10启动盘启动。进入修复计算机 -> 疑难解答，可以先试一下【启动项修复】，看看能不能自动修复，我这里是不行的。
 如果不能修复打开【命令行工具】。
 
