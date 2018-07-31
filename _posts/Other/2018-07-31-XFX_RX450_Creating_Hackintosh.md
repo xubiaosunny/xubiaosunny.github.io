@@ -20,6 +20,7 @@ tags: RX460 黑苹果
     这个镜像做完驱动基本上都是全的，我就是用的这个
 
 2. UniBeast
+
     [https://www.tonymacx86.com/threads/unibeast-install-macos-high-sierra-on-any-supported-intel-based-pc.235474/](https://www.tonymacx86.com/threads/unibeast-install-macos-high-sierra-on-any-supported-intel-based-pc.235474/)
 
 ### 配置config.plist
@@ -51,7 +52,7 @@ bios文件可以在[这里](https://www.techpowerup.com/vgabios/?architecture=AM
 
 ## 安装
 
-uEFI引导进入clover，-v模式进入u盘。如果没有问题就会进入安装界面，然后格盘安装。之后会重启两次进入硬盘安装。我在第一次进硬盘安装的时候卡住，后来把主板bios伤的快速启动关闭就过去了。如果要报错只能上网查。
+uEFI引导进入clover，-v模式进入u盘。如果没有问题就会进入安装界面，然后格盘安装。之后会重启两次进入硬盘安装。我在第一次进硬盘安装的时候卡住，后来把主板bios上的快速启动关闭就过去了。如果要报错只能上网查。
 
 ## 驱动硬件
 
