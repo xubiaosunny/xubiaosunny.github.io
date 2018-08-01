@@ -10,7 +10,7 @@ tags: bing 爬虫
 
 请求[https://bing.ioliu.cn/](https://bing.ioliu.cn/)的api很自己爬bing也没什么两样，于是自己动手也写了个脚本。
 
-```python3
+```python
 # -*- coding: utf-8 -*-
 import requests
 import json
