@@ -30,10 +30,15 @@ image_dir = os.path.abspath(os.path.dirname(__file__))
 
 
 def set_wallpaper(image_name):
+    if not os.path.exists(image_name):
+        print("%s don't exist!!!" % image_name)
+        return False
+
     c_os = platform.system()
     set_wallpaper_cmd = SET_WALLPAPER_CMD.get(c_os)
     os.system(set_wallpaper_cmd.format(image_name=image_name))
     print("set wallpaper successful: %s" % image_name)
+    return True
 
 
 def get_wallpaper():
@@ -60,7 +65,18 @@ def get_wallpaper():
         time.sleep(1)
 
 if __name__ == "__main__":
-    get_wallpaper()
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Bing Wallpaper Program')
+    parser.add_argument('--set', dest='image_name', help='set existed image to wallpaper')
+    args = parser.parse_args()
+
+    image_name = args.image_name
+    if image_name:
+        image_name = os.path.join(image_dir, image_name + '.jpg')
+        set_wallpaper(image_name)
+    else:
+        get_wallpaper()
 ```
 
 然后挂个crontab，实现每日自动更新。
