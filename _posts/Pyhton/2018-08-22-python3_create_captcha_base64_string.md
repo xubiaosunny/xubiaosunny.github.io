@@ -10,7 +10,7 @@ python生成验证码基本套路，使用Pillow（python2可以用PIL）生成�
 
 参考文章：https://blog.fudenglong.site/2017/09/21/python3%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81%E7%A0%81/
 
-该文章代码生成了中文验证码，在此基础上增加了英文数字验证码的选项，并区分了Unicode和gbk2312字符集（Unicode字符集包含中文太多，会出现过多生僻字）。由于在实际应用当中生成图片的情况较少，一般都是放到前端页面显示，故增加了导出图片base64字符串，便于接口传输。
+该文章代码生成了中文验证码，在此基础上我增加了英文数字验证码的选项，并区分了Unicode和gbk2312字符集（Unicode字符集包含中文太多，会出现过多生僻字）。由于在实际应用当中生成图片的情况较少，一般都是放到前端页面显示，故增加了生成图片base64字符串，便于接口传输。
 
 ### 代码
 
@@ -118,8 +118,38 @@ class ImageChar(object):
         return char_str, img_str
 ```
 
+* 注意如果使用中文需使用中文字体，否则不能显示
+
 ### 前端使用
 
-前端使用angular框架
+前端使用angular框架，基本代码如下：
 
 html
+
+```html
+<a nz-col [nzSpan]="8" (click)="getCaptchaImage()">
+    <img [src]="captchaImage" height="40px">
+</a>
+```
+
+TS
+
+```typescript
+...
+
+captchaImage: string;
+
+...
+
+getCaptchaImage() {
+    this.captchaApi.getBase64Img().subscribe( response => { 
+        this.captchaImage = response['image']
+    });
+}
+
+...
+```
+
+### 后端逻辑
+
+每次请求生成验证码图片的时候，可以将验证码字符串存储在session中，以便做验证码校验。
