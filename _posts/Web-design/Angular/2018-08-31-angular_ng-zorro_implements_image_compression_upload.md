@@ -166,7 +166,7 @@ export class ImageCompressService {
 
 ### 配合ng-zorro实现压缩后上传文件
 
-使用`nzCustomRequest`覆盖默认行为实现定制需求以实现先压缩在上传，我使用的ng-zorro版本为1.0
+使用`nzCustomRequest`覆盖默认行为实现定制需求以实现先压缩在上传，我使用的ng-zorro版本为1.0。自定义请求参考https://stackblitz.com/edit/ng-zorro-antd-setup-dpwsmc?file=app%2Fapp.component.ts
 
 ```typescript
 import { Component } from '@angular/core';
