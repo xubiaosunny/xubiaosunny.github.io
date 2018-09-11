@@ -60,7 +60,7 @@ import threading
 
 def factorial(name, number):
     print("Task %s: Start ...." % (name))
-    lock = ZookeeperLock.instance().get_lock("/gateway/do_purchase", '123123')
+    lock = ZookeeperLock.instance().get_lock("/xxx/xx", '123123')
     print("Task %s: Get Lock" % (name))
     lock.acquire()
     print("Task %s: Doing ..." % (name))
