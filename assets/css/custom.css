@@ -232,7 +232,7 @@ body {
 }
 
 .copyright a:hover{
-  color:rgb(159, 159, 160);
+  color:#e67e22;
   text-decoration:none;
 }
 .copyright a:visited{
@@ -240,6 +240,6 @@ body {
   text-decoration: none;
 }
 .copyright a:active{
-  color:rgb(159, 159, 160);
+  color:#e67e22;
   text-decoration:none;
 }
