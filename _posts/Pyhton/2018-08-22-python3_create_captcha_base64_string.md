@@ -3,7 +3,7 @@ layout: post
 title: "python3生成图片验证码并在angluar中显示"
 date: 2018-08-22 17:59:48
 categories: 技术
-tags: captcha python angular
+tags: captcha python Angular
 ---
 
 python生成验证码基本套路，使用Pillow（python2可以用PIL）生成文字和干扰线。
@@ -64,7 +64,7 @@ class ImageChar(object):
         elif code == 'gbk2312':
             head = random.randint(0xb0, 0xf7)
             body = random.randint(0xa1, 0xf9)
-            val = f'{head:x}{body:x}'
+            val = "%x%x" % (head, body)
             return bytes.fromhex(val).decode('gb2312')
         else:
             raise ValueError('code error')
@@ -106,13 +106,16 @@ class ImageChar(object):
 
     @classmethod
     def create_chinese_captcha(cls):
-        instance = cls(font_path='/ui/src/assets/fonts/simsun.ttc')
-        instance.write_char(4, True)
-        instance.output("test.png")
+        instance = cls(font_path='%s/ui/src/assets/fonts/simsun.ttc' % (
+            settings.BASE_DIR, ))
+        char_str = instance.write_char(4, True)
+        img_str = instance.to_base64()
+        return char_str, img_str
 
     @classmethod
     def create_char_captcha(cls):
-        instance = cls(font_path='/ui/src/assets/fonts/Arial.ttf')
+        instance = cls(font_path='%s/ui/src/assets/fonts/Arial.ttf' % (
+            settings.BASE_DIR, ))
         char_str = instance.write_char(4)
         img_str = instance.to_base64()
         return char_str, img_str

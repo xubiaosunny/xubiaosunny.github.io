@@ -3,7 +3,7 @@ layout: post
 title: "使用disqus为博客添加评论功能"
 date: 2018-04-15 23:02:57
 categories: 折腾
-tags: disqus jekyll comments
+tags: disqus jekyll
 ---
 最近工作较忙也没时间再折腾个人博客（有点时间也和同事吃把鸡，垃圾游戏毁我青春），今天终于有一整天时间可以在搞一下，博客基本功能都差不多了，还缺个评论功能，方便别人指正我的问题（估计没人看，但是功能咱得有，这博客只当笔记用）。首先以[安静会的一篇博客](https://blog.csdn.net/u013381011/article/details/76944663)开始。
 

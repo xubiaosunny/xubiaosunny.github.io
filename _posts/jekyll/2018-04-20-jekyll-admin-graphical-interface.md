@@ -3,7 +3,7 @@ layout: post
 title: "使用jekyll-admin为jekyll提供图形界面"
 date: 2018-04-20 22:55:00
 categories: 折腾
-tags: jekyll admin vscode
+tags: jekyll vscode
 ---
 使用jekyll搭建个人博客并进行博客撰写对于程序开发人员来说也许不算难事，因为我们又较专业的编辑器以及熟悉一些程序流程。但是对于行外人就不是那么友好了。作为开发人员我强烈推荐`vscode`，不得不说vscode真是微软良心之作，用过sublime和atom，感觉还是vscode好用（个人喜好，勿喷）
 
