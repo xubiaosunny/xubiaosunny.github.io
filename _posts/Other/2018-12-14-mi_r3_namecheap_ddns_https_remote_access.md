@@ -22,7 +22,7 @@ chmod +x start.sh
 
 刷机过程的语言是根据你系统的语言来的，当然设置中文得下载中文语言包。
 
-也可以克隆Padavan项目自己编译，但得主机根据自己的路由器配置参数，项目地址：https://bitbucket.org/padavan/rt-n56u/
+也可以克隆Padavan项目自己编译，但根据自己的路由器配置参数，项目地址：https://bitbucket.org/padavan/rt-n56u/
 
 ## namecheap动态DNS
 
