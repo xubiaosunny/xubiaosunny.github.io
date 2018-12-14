@@ -110,6 +110,12 @@ dig -t txt _acme-challenge.xxx.com @8.8.8.8
 
 详细步骤查看上面的参考链接，就不搬运了。
 
+证书续租
+
+```shell
+certbot-auto renew
+```
+
 ## 安装SSL证书
 
 打开 `cert.pem`、`fullchain.pem`、`privkey.pem`拷贝里面的内容按下图对应粘贴到对应位置，保存。(如果打开文件权限不足，尝试使用`root`用户)
