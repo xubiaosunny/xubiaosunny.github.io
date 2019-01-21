@@ -12,7 +12,7 @@ tags: Debian
 
 ## 设置区时
 
-参考：[https://www.howtoing.com/how-to-set-up-time-synchronization-on-debian-9](https://www.howtoing.com/how-to-set-up-time-synchronization-on-debian-9)
+参考：[https://www.howtoing.com/how-to-set-up-time-synchronization-on-debian-9](https://www.howtoing.com/how-to-set-up-time-synchronization-on-debian-9)
 
 列出可用区时
 
