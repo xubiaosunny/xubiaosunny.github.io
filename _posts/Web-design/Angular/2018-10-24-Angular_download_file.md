@@ -57,3 +57,35 @@ this.http.get(url).subscribe(res => {
 ```
 
 这种方法下载小文件还是很不错的，但是下载大文件估计回奔溃。。。下载达文件还是使用`href`直接get比较好，一般前后分离项目前后端应该不会部署在一台机器上的，但在一台机器上避免了跨域问题。
+
+> ### `2019-01-21 14:58:23` 修改
+
+使用`HttpClient`来请求数据流的方式可行，是我的实现方式不对，参考[https://blog.csdn.net/shengandshu/article/details/81127279](https://blog.csdn.net/shengandshu/article/details/81127279)
+
+```typescript
+this.http.get(url, {responseType: 'blob', observe: 'response'}).subscribe(data => {
+    const link = document.createElement('a');
+    const blob = new Blob([data.body]);
+    link.setAttribute('href', window.URL.createObjectURL(blob));
+    link.setAttribute('download', data.headers.get('Content-disposition').split('filename=')[1]);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+```
+
+另附django返回文件流代码
+
+```python
+from django.http import StreamingHttpResponse
+from wsgiref.util import FileWrapper
+
+...
+# file
+response = StreamingHttpResponse(FileWrapper(file, 4096))
+response['Content-Length'] = file.size
+response['Content-Type'] = 'application/octet-stream'
+response['Content-Disposition'] = "attachment; filename='{0}'".format(file_name)
+return response
+```
