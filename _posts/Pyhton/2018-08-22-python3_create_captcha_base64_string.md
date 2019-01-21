@@ -125,7 +125,7 @@ class ImageChar(object):
 
 ### 前端使用
 
-前端使用angular框架，基本代码如下：
+前端使用angular框架，基本代码如下：
 
 html
 

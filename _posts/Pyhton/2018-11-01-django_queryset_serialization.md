@@ -15,7 +15,7 @@ from django.core import serializers
 data = serializers.serialize('json', SomeModel.objects.all(), fields=('name','size'))
 ```
 
-支持以下序列化
+支持以下序列化
 
 | Identifier | Information |
 | ------ | ------ |
@@ -23,7 +23,7 @@ data = serializers.serialize('json', SomeModel.objects.all(), fields=('name','si
 | json   | 	Serializes to and from JSON. |
 | yaml   | Serializes to YAML (YAML Ain’t a Markup Language). This serializer is only available if PyYAML is installed. |
 
-使用`DjangoJSONEncoder`统一格式化`datetime`，同理可以格式化其他类型。
+使用`DjangoJSONEncoder`统一格式化`datetime`，同理可以格式化其他类型。
 
 ```python
 from django.core.serializers.json import DjangoJSONEncoder
