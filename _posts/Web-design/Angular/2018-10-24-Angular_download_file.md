@@ -28,7 +28,7 @@ this.http.get(url, {responseType: 'blob' as 'blob'}).subscribe(res => {
 这样做的话（就我目前的实现）是不能都下载到正确的文件的，下载的文件内容中都是数字，可能是我对`HttpClient`和`Blob`对象不太了解吧，以后在研究。
 
 
-现在我的需求下载的文件不会太大，我就采用了一种确定好使的方法，因为angular默认都是使用Json来和后端交互。所以我后端不返回流式响应，而返回包含文件base64字符串的json，然后在前端decode下载.
+现在我的需求下载的文件不会太大，我就采用了一种确定好使的方法，因为angular默认都是使用Json来和后端交互。所以我后端不返回流式响应，而返回包含文件base64字符串的json，然后在前端decode下载.
 
 ```typescript
 
@@ -56,11 +56,11 @@ this.http.get(url).subscribe(res => {
 });
 ```
 
-这种方法下载小文件还是很不错的，但是下载大文件估计回奔溃。。。下载达文件还是使用`href`直接get比较好，一般前后分离项目前后端应该不会部署在一台机器上的，但在一台机器上避免了跨域问题。
+这种方法下载小文件还是很不错的，但是下载大文件估计回奔溃。。。下载达文件还是使用`href`直接get比较好，一般前后分离项目前后端应该不会部署在一台机器上的，但在一台机器上避免了跨域问题。
 
 > ### `2019-01-21 14:58:23` 修改
 
-使用`HttpClient`来请求数据流的方式可行，是我的实现方式不对，参考[https://blog.csdn.net/shengandshu/article/details/81127279](https://blog.csdn.net/shengandshu/article/details/81127279)
+使用`HttpClient`来请求数据流的方式可行，是我的实现方式不对，参考[https://blog.csdn.net/shengandshu/article/details/81127279](https://blog.csdn.net/shengandshu/article/details/81127279)
 
 ```typescript
 this.http.get(url, {responseType: 'blob', observe: 'response'}).subscribe(data => {
@@ -75,7 +75,7 @@ this.http.get(url, {responseType: 'blob', observe: 'response'}).subscribe(data =
 });
 ```
 
-另附django返回文件流代码
+另附django返回文件流代码
 
 ```python
 from django.http import StreamingHttpResponse

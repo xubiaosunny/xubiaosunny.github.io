@@ -18,15 +18,15 @@ chmod +x start.sh
 ./start.sh
 ```
 
-一定要用`Ubuntu 16.04 TLS`系统来刷，我试过使用`Ubuntu 18.04 TLS`，过程会有报错，懒得解决，还是使用推荐的系统比较好。`Padavan`官方Wiki上写的也是用`Ubuntu 16.04 LTS`。
+一定要用`Ubuntu 16.04 TLS`系统来刷，我试过使用`Ubuntu 18.04 TLS`，过程会有报错，懒得解决，还是使用推荐的系统比较好。`Padavan`官方Wiki上写的也是用`Ubuntu 16.04 LTS`。
 
-刷机过程的语言是根据你系统的语言来的，当然设置中文得下载中文语言包。
+刷机过程的语言是根据你系统的语言来的，当然设置中文得下载中文语言包。
 
 也可以克隆Padavan项目自己编译，但根据自己的路由器配置参数，项目地址：https://bitbucket.org/padavan/rt-n56u/
 
 ## namecheap动态DNS
 
-我之前有在`namecheap`购买一个域名，也就是`xubiaosunny.online`，我博客的子域名就是用的这个。可以在分一个子域名给家里的路由器。正好也支持动态DNS。文档地址[https://www.namecheap.com/support/knowledgebase/article.aspx/36/11/how-do-i-start-using-dynamic-dns](https://www.namecheap.com/support/knowledgebase/article.aspx/36/11/how-do-i-start-using-dynamic-dns)
+我之前有在`namecheap`购买一个域名，也就是`xubiaosunny.online`，我博客的子域名就是用的这个。可以在分一个子域名给家里的路由器。正好也支持动态DNS。文档地址[https://www.namecheap.com/support/knowledgebase/article.aspx/36/11/how-do-i-start-using-dynamic-dns](https://www.namecheap.com/support/knowledgebase/article.aspx/36/11/how-do-i-start-using-dynamic-dns)
 
 首先打开`Advanced DNS`
 
@@ -99,7 +99,7 @@ chmod a+x certbot-auto
 dig -t txt _acme-challenge.xxx.com @8.8.8.8
 ```
 
-完成后会在路径`/etc/letsencrypt/live/xxx.xx`下生成以下文件，‘xxx.xx’为自己的域名。
+完成后会在路径`/etc/letsencrypt/live/xxx.xx`下生成以下文件，‘xxx.xx’为自己的域名。
 
 ```shell
 ├── cert.pem
@@ -116,7 +116,7 @@ dig -t txt _acme-challenge.xxx.com @8.8.8.8
 certbot-auto renew
 ```
 
-## 安装SSL证书
+## 安装SSL证书
 
 打开 `cert.pem`、`fullchain.pem`、`privkey.pem`拷贝里面的内容按下图对应粘贴到对应位置，保存。(如果打开文件权限不足，尝试使用`root`用户)
 

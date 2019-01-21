@@ -90,16 +90,16 @@ export class MarketEnterAppComponent implements OnInit {
 }
 ```
 
-在获取到实例的时候对实例调用的时候回报‘没有xxx属性’的错误，可以为实例指定类型：
+在获取到实例的时候对实例调用的时候回报‘没有xxx属性’的错误，可以为实例指定类型：
 
 ```typescript
 const instance = <EnterAppComponent>componentRef.instance;
 ```
 
-类似的还有
+类似的还有
 
 ```typescript
-// 如果不指定类型回报 没有submit方法
+// 如果不指定类型回报 没有submit方法
 const form = <HTMLFormElement>document.getElementById('form')
 form.submit();
 ```

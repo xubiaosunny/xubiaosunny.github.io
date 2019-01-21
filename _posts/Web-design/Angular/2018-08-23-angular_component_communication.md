@@ -43,10 +43,10 @@ export class SetTagComponent implements OnInit {
 父组件
 
 ```html
-<!-- 传入变量 -->
+<!-- 传入变量 -->
 <app-set-tag #setTagModel [tagName]="'tttt'"></app-set-tag>
 
-<!-- 传入template -->
+<!-- 传入template -->
 <app-set-tag [myContent]="contentTemplate">
   <ng-template #contentTemplate>
     <h1>ttt</h1>
@@ -76,7 +76,7 @@ export class AutoscalingListComponent implements OnInit {
 }
 ```
 
-* 非Input()字段也可以使用ViewChild传值
+* 非Input()字段也可以使用ViewChild传值
 
 ## 子组件向父组件传值
 
@@ -129,7 +129,7 @@ export class DatacenterListComponent implements OnInit {
 
 ### 利用@Output()实现Callback
 
-子组件
+子组件
 
 ```typescript
 import {Component, OnInit, ViewChild, TemplateRef, Input} from '@angular/core';

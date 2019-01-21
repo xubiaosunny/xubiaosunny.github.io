@@ -12,7 +12,7 @@ airflow的webserver默认监听为8080端口，若使用Celery执行任务，一
 
 以我的域名为例`www.xubiaosunny.online`
 
-### 修改配置文件`airflow.cfg`
+### 修改配置文件`airflow.cfg`
 
 ```
 base_url = https://www.xubiaosunny.online/airflow
@@ -44,7 +44,7 @@ location /flower/ {
 }
 ```
 
-这样配置完，就可以通过`https://www.xubiaosunny.online/airflow/`和`https://www.xubiaosunny.online/airflow/`来访问airflow和flower了。
+这样配置完，就可以通过`https://www.xubiaosunny.online/airflow/`和`https://www.xubiaosunny.online/airflow/`来访问airflow和flower了。
 
 默认airflow是监听广播地址`0.0.0.0`，我们现在还可以通过8080和5555端口来访问。可以改为`127.0.0.1`来限制。修改配置文件
 
@@ -54,7 +54,7 @@ web_server_host = localhost
 flower_host = localhost
 ```
 
-到这其实我觉得还有一个问题，就是如果使用`airflow flower`来启动flower的话默认没有认真，不太安全。而且airflow配置文件内也没有这个配置。`flower`可以使用自己的命令启动
+到这其实我觉得还有一个问题，就是如果使用`airflow flower`来启动flower的话默认没有认真，不太安全。而且airflow配置文件内也没有这个配置。`flower`可以使用自己的命令启动
 
 文档地址： [https://flower.readthedocs.io/en/latest/auth.html](https://flower.readthedocs.io/en/latest/auth.html)
 
