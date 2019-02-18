@@ -52,7 +52,7 @@ def main():
     else:
         args.tags = []  
     
-    create_post(args.name, args.title, args.categories, args.tags)
+    create_post('_'.join(args.name.split()), args.title, args.categories, args.tags)
 
 
 if __name__ == "__main__":
