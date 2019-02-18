@@ -185,7 +185,7 @@ env[TEMP] = /tmp
 
 重启fpm
 
-```sehll
+```shell
 service php7.2-fpm restart
 ```
 
