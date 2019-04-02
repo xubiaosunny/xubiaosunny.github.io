@@ -45,7 +45,7 @@ network:
 
 创建vxlan加入同一个多播组并启用
 
-这里我使用的`VXLAN ID`为2000，多播地址为239.0.7.208，
+这里我使用的`VXLAN ID`为2000，多播地址为239.0.7.208，vxlan虚拟网卡为vxlan2000
 
 ```bash
 /sbin/ip route add 239.0.7.208/32 dev br1
@@ -91,16 +91,36 @@ network:
 /usr/bin/virsh define config.xml
 ```
 
-通过`qemu-agent-command`执行命令配置私网网卡及ip
+通过`qemu-agent-command`执行命令配置私网网卡及ip（为vm1分配192.168.100.1）
 
 ```bash
 /usr/bin/virsh qemu-agent-command vm1 '{"arguments": {"capture-output": true, "arg": ["-o", "link"], "path": "/sbin/ip"}, "execute": "guest-exec"}'
 
-# guest-exec
-# 以下命令获取对应pid的返回
+# guest-exec 会返回命令执行进程的id
+# 通过以下命令获取对应pid（如1429）的返回
 # /usr/bin/virsh qemu-agent-command vm1 '{"arguments": {"pid": 1429}, "execute": "guest-exec-status"}'
 
 /usr/bin/virsh qemu-agent-command vm1 '{"arguments": {"capture-output": false, "arg": ["ens6", "192.168.100.1", "netmask", "255.255.255.0"], "path": "/sbin/ifconfig"}, "execute": "guest-exec"}'
 ```
+> 如果没有安装配置qemu-agent则通过以下方式安装，参考[https://cloud.tencent.com/developer/article/1162113](https://cloud.tencent.com/developer/article/1162113)
 
-稍后在更新
+编辑kvm虚拟机配置文件
+
+```xml
+<channel type='unix'>
+  <source mode='bind' path='/var/lib/libvirt/qemu/org.qemu.guest_agent.0'/>
+  <target type='virtio' name='org.qemu.guest_agent.0'/>
+</channel>
+```
+
+kvm虚拟机内安装`qemu-guest-agent`（可以在镜像制作时就安装完成）
+
+```bash
+apt install qemu-guest-agent
+```
+
+### 将其他kvm虚拟机加入该私网
+
+按照上面的流程将vm2和vm3加入私网`net1`，并分配ip为`192.168.100.2`和192.168.100.3`
+
+
