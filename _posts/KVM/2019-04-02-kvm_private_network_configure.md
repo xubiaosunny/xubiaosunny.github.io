@@ -165,5 +165,12 @@ apt install qemu-guest-agent
 
 /sbin/ip link set vxlan2000 down
 /sbin/ip link delete vxlan2000
-/sbin/ip route del 239.0.7.208/32 dev %vxlan2000
+/sbin/ip route del 239.0.7.208/32 dev vxlan2000
 ```
+
+查看是否还有kvm虚拟机在私网（net1）内
+
+```bash
+ls /sys/class/net/net1/brif
+```
+若只剩下`vxlan2000`那么该物理机上没有虚拟机在该私网（net1）内了。
