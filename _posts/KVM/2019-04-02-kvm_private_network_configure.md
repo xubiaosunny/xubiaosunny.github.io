@@ -123,4 +123,47 @@ apt install qemu-guest-agent
 
 按照上面的流程将vm2和vm3加入私网`net1`，并分配ip为`192.168.100.2`和192.168.100.3`
 
+### 离开私网
 
+以上方法建立私有网络及加入私网的配置是临时的，当物理机和kvm虚拟机重启后都会失效。
+
+所以当kvm虚拟机已经关机，只需要将kvm虚拟机的配置文件更新即可（删除`net1`interface）
+
+```xml
+<!-- 删除以下内容 -->
+<interface type='bridge'>
+  <mac address='fa:52:00:66:66:83'/>
+  <source bridge='net1'/>
+  <model type='e1000'/>
+  <alias name='net1'/>
+  <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0'/>
+</interface>
+```
+
+然后重新定义kvm虚拟机
+
+```bash
+/usr/bin/virsh undefine vm1
+/usr/bin/virsh define config.xml
+```
+
+如果kvm虚拟机没有重启或关机，需先手动卸载该interface，xml（join.xml）配置文件与加载时一样
+
+```bash
+/usr/bin/virsh detach-device vm1 join.xml
+```
+
+### 删除VXLan虚机网卡及网桥
+
+如果没有kvm虚拟机加入到私网时，可以将其删除
+
+```bash
+/sbin/brctl delif net1 vxlan2000
+/sbin/brctl stp net1 off
+/sbin/ip link set net1 down
+/sbin/brctl delbr net1
+
+/sbin/ip link set vxlan2000 down
+/sbin/ip link delete vxlan2000
+/sbin/ip route del 239.0.7.208/32 dev %vxlan2000
+```
