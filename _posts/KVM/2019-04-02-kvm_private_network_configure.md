@@ -102,6 +102,7 @@ network:
 
 /usr/bin/virsh qemu-agent-command vm1 '{"arguments": {"capture-output": false, "arg": ["ens6", "192.168.100.1", "netmask", "255.255.255.0"], "path": "/sbin/ifconfig"}, "execute": "guest-exec"}'
 ```
+
 > 如果没有安装配置qemu-agent则通过以下方式安装，参考[https://cloud.tencent.com/developer/article/1162113](https://cloud.tencent.com/developer/article/1162113)
 
 编辑kvm虚拟机配置文件
@@ -125,7 +126,7 @@ apt install qemu-guest-agent
 
 网络拓扑图如下：
 
-![](\assets\images\post\截图_09ba8d77-a472-471f-9bd9-84eeb29058d9.png)
+![](\assets\images\post\kvm-private-net.png)
 
 ### 离开私网
 
