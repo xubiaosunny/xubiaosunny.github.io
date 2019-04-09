@@ -52,6 +52,9 @@ dns-nameservers 192.168.11.1
 为了防止用户随意更改ip地址，使用`ebtables`对网桥br0添加规则
 
 ```bash
+ebtables -t nat -N vm1-vnet0-I
+ebtables -t nat -N vm1-vnet0-O
+
 ebtables -t nat -A vm1-vnet0-I -s ! 52:54:00:27:c7:f3 -j DROP
 ebtables -t nat -A vm1-vnet0-I -p IPv4 --ip-src 192.168.11.14 -j ACCEPT
 ebtables -t nat -A vm1-vnet0-I -p ARP --arp-ip-src 192.168.11.14 -j ACCEPT
@@ -69,7 +72,18 @@ ebtables -t nat -A vm1-vnet0-O -j DROP
 
 ebtables -t nat -A PREROUTING -i vnet0 -j vm1-vnet0-I
 
-ebtables -t nat -A POSTROUTING -O vnet0 -j vm1-vnet0-O
+ebtables -t nat -A POSTROUTING -o vnet0 -j vm1-vnet0-O
+```
+
+如果想要移除mac地址与ip绑定，执行以下规则
+
+```bash
+ebtables -t nat -D PREROUTING -i vnet0 -j vm1-vnet0-I
+ebtables -t nat -D POSTROUTING -o vnet0 -j vm1-vnet0-O
+ebtables -t nat -F vm1-vnet0-I
+ebtables -t nat -X vm1-vnet0-I
+ebtables -t nat -F vm1-vnet0-O
+ebtables -t nat -X vm1-vnet0-O
 ```
 
 ## 限制虚拟机带宽
