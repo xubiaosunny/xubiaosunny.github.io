@@ -94,6 +94,15 @@ ebtables -t nat -X vm1-vnet0-O
 /usr/bin/virsh domiftune vm1 vnet0 --inbound "125,125,150" --outbound "125,125,150" --live
 ```
 
-inbound和outbound的三位数值分别对应<均值KByte/s>,<峰值KByte/s>,<突发值KByte/s>
+inbound和outbound的三位数值(avg, peak, burst)分别对应<实际限速值KByte/s>,<峰值KByte/s>,<突发值KByte/s>
+
+我们公司的的计算方式为`avg=peak` `burst=1.2*peak`。
 
 使用`iperf`测速为`1.05 Mbits/sec`，而对没有限制带宽的vm2测速为`695 Mbits/sec`，因此可以看出带宽限制有效。
+
+> 其他限制资源的地方还有磁盘IOPS：`/usr/bin/virsh blkdeviotune vm1 vda --write-iops-sec 15 --write-bytes-sec 2048 --read-bytes-sec 4096 --read-iops-sec 15`
+
+## 总结
+
+我们公司是使用静态ip加防火墙来实现公网ip的分配，但我在`vultr`也有虚拟机，我查看发现`vultr`并没有在虚拟机内使用静态ip而是dhcp。我估计他们是在路由器层面做了mac地址与ip绑定，等以后在研究一下。
+`
