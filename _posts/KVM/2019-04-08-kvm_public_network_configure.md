@@ -88,4 +88,12 @@ ebtables -t nat -X vm1-vnet0-O
 
 ## 限制虚拟机带宽
 
-有空在写
+设置vm1的带宽为1Mbps
+
+```bash
+/usr/bin/virsh domiftune vm1 vnet0 --inbound "125,125,150" --outbound "125,125,150" --live
+```
+
+inbound和outbound的三位数值分别对应<均值KByte/s>,<峰值KByte/s>,<突发值KByte/s>
+
+使用`iperf`测速为`1.05 Mbits/sec`，而对没有限制带宽的vm2测速为`695 Mbits/sec`，因此可以看出带宽限制有效。
