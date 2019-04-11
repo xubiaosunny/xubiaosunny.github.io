@@ -28,7 +28,7 @@ tags: KVM Linux
 ...
 ```
 
-通过挂载虚拟机img镜像方式修改vm1的`/etc/network/interfaces`，将interface改为静态ip。我这里的虚拟机系统为ubuntu10.04，其他系统请配置相应的网络管理工具。
+通过挂载虚拟机img镜像方式修改vm1的`/etc/network/interfaces`，将interface改为静态ip。我这里的虚拟机系统为ubuntu18.04，其他系统请配置相应的网络管理工具。
 
 ```conf
 # This file describes the network interfaces available on your system
