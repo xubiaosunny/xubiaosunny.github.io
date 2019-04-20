@@ -185,12 +185,13 @@
 .highlight .o {
   color: #f92672;
 }
-post-content blockquote {
+.post-content blockquote {
   border-left: .25em solid #dfe2e5;
   color: #6a737d;
   padding: 0 1em;
   margin-bottom: 16px;
   margin-top: 0;
+  line-height: 24px;
 }
 pre[class='highlight'] {
   padding: 16px;
