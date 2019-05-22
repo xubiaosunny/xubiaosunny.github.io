@@ -31,10 +31,10 @@ RUN pipenv install --system --deploy --ignore-pipfile
 
 因为项目中用到了`ffmpeg`所以需要安装，还有国际化需要的`gettext`。
 
-因为`python:3.7`镜像使用的是`buildpack-deps:stretch`，也就是debian9，直接使用apt就可以安装所需软件。但是国外的debian源有点慢，于是在试着如下改为阿里的源（清华的源是https了，有问题，`apt-transport-https`也装不上），但是不好使，估计`buildpack-deps:stretch`跟`debian:stretch`是有差别的。想用国内源还可以用其他方案，就是直接使用`buildpack-deps:stretch`然后自己装python3.7。我就不试了，已经顶着网速build完了。。。
+因为`python:3.7`镜像使用的是`buildpack-deps:stretch`，也就是debian9，直接使用apt就可以安装所需软件。但是国外的debian源有点慢，于是在试着如下改为阿里的源（清华的源是https了，有问题，`apt-transport-https`也装不上），但是不好使，估计`buildpack-deps:stretch`跟`debian:stretch`是有差别的。想用国内源还可以用其他方案，就是直接使用`debian:stretch`然后自己装python3.7。我就不试了，已经顶着网速build完了。。。
 
 ```dockerfile
-# 如下可修改debian9的源
+# 如下可修改debian9的阿里源
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
    echo "deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib" >/etc/apt/sources.list && \
    echo "deb-src http://mirrors.aliyun.com/debian/ stretch main non-free contrib" >/etc/apt/sources.list && \
@@ -156,4 +156,4 @@ web:
 
 ## 总结
 
-环境的部署有时候特别烦人，有docker的话部署起来就很方便了，当然docker不限于此，也可以用于环境隔离、弹性计算等等。对于组件的系统最好不要都放到一个container中，而是要分别起container。
+环境的部署有时候特别烦人，有docker的话部署起来就很方便了，当然docker不限于此，也可以用于环境隔离、弹性计算等等。对于多组件的系统最好不要都放到一个container中，而是要分别起container。
