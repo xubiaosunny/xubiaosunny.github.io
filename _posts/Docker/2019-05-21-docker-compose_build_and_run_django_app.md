@@ -16,7 +16,7 @@ tags: Docker docker-compose Django Celery
 
 ## Dockerfile
 
-```Dockerfile
+```dockerfile
 FROM python:3.7
 RUN mkdir /code
 
@@ -33,7 +33,7 @@ RUN pipenv install --system --deploy --ignore-pipfile
 
 因为`python:3.7`镜像使用的是`buildpack-deps:stretch`，也就是debian9，直接使用apt就可以安装所需软件。但是国外的debian源有点慢，于是在试着如下改为阿里的源（清华的源是https了，有问题，`apt-transport-https`也装不上），但是不好使，估计`buildpack-deps:stretch`跟`debian:stretch`是有差别的。想用国内源还可以用其他方案，就是直接使用`buildpack-deps:stretch`然后自己装python3.7。我就不试了，已经顶着网速build完了。。。
 
-```Dockerfile
+```dockerfile
 # 如下可修改debian9的源
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
    echo "deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib" >/etc/apt/sources.list && \
@@ -48,7 +48,7 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
 
 因为我使用的的是`pipenv`来管理python包，所以安装时很方便，如果安装慢也可以使用国内pypi源
 
-```Dockerfile
+```dockerfile
 RUN pip3 install pipenv -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pipenv install --system --deploy --ignore-pipfile -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
