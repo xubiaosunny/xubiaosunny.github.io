@@ -80,7 +80,7 @@ services:
       - db
       - rabbit
   celery:
-    image: yasuo_web # 启动celery与web使用同一哥镜像，但分为两个container
+    image: yasuo_web # 启动celery与web使用同一镜像，但分为两个container
     command: celery -A yasuo worker -l info
     volumes:
       - .:/code
