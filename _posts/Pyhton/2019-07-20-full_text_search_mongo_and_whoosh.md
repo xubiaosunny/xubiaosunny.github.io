@@ -42,13 +42,13 @@ db.product.find({$text:{$search:"保险"}})
 
 因为项目是python实现的，使用whoosh还是很方便的
 
-### 安装
+#### 安装
 
 ```bash
 pip3 install whoosh
 ```
 
-### 将mongo中的数据在whoosh中生成索引
+#### 将mongo中的数据在whoosh中生成索引
 
 将已经解析完的数据建立索引，以后新解析的保险在解析完成是添加。
 
@@ -115,7 +115,7 @@ for item in product_coll.find({}):
 writer.commit()
 ```
 
-### 查询
+#### 查询
 
 ```python
 parser = MultifieldParser(
@@ -128,7 +128,7 @@ with ix.searcher(weighting=scoring.BM25F(B=0.75, id_B=10, companyName_B=10, cont
     print(list(results))
 ```
 
-### 总结
+#### 总结
 
 结果测试whoosh可以完美实现现在的需求
 
