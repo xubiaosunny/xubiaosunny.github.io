@@ -73,7 +73,7 @@ airflow自带的查询页面不支持mongo，于是我只好根据Ad Hoc Query�
 
 基本都是复制的Ad Hoc Query中template的内容
 
-```html
+```html{% raw %}
 {% extends "airflow/master.html" %}
 
 {% block title %}{{ title }}{% endblock %}
@@ -144,8 +144,7 @@ airflow自带的查询页面不支持mongo，于是我只好根据Ad Hoc Query�
     });
   </script>
 {% endblock %}
-
-```
+{% endraw %}```
 
 #### plugins/blueprints/mongodb_query.py
 
