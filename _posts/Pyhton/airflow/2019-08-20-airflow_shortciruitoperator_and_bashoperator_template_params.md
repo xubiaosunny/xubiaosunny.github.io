@@ -86,7 +86,7 @@ DummyOperator不会执行任何任务，但可以用它来组织整个Dag的结�
 
 该例子展示了以上所有特性的用法
 
-```python
+```python{% raw %}
 from airflow.models import DAG
 from airflow.operators.python_operator import ShortCircuitOperator, PythonOperator
 from airflow.operators.dummy_operator import DummyOperator
@@ -130,4 +130,4 @@ dummy = DummyOperator(task_id='dummy', dag=dag)
 cond >> dummy
 dummy >> task2
 dummy >> task3
-```
+{% endraw %}```
