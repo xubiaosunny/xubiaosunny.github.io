@@ -21,17 +21,70 @@ tags: airflow
 
 ## ShortCircuitOperator
 
-我们可以用`ShortCircuitOperator`来就行一个逻辑判断
+我们可以用`ShortCircuitOperator`来进行逻辑判断，`return True`会继续后面的任务，`return False`则会中断本次Dag，后续的任务会被标记为`skipped`。
 
 ## BashOperator模版参数传入
 
-pass
+在`BashOperator`中bash命令是可以使用jinja2模版语言的，如官方文档中Tutorial的例子
+
+```python
+...
+templated_command = """{% raw %}
+    {% for i in range(5) %}
+        echo "{{ ds }}"
+        echo "{{ macros.ds_add(ds, 7)}}"
+        echo "{{ params.my_param }}"
+    {% endfor %}
+{% endraw %}"""
+
+t3 = BashOperator(
+    task_id='templated',
+    bash_command=templated_command,
+    params={'my_param': 'Parameter I passed in'},
+    dag=dag)
+...
+```
+
+### 传入Variable参数
+
+在`bash_command`可以传入Variables的变量
+
+传入字典（通过`var.json`）
+
+```{% raw %}
+# test为json格式字符串
+{{ var.json.test.value }}
+{% endraw %}```
+
+传入字符串（通过`var.value`）
+
+```{% raw %}
+# test为普通字符串
+{{ var.value.test }}
+{% endraw %}```
+
+
+### 传入params参数
+
+通过`params`来取值
+
+```python{% raw %}
+BashOperator(
+    task_id='templated',
+    bash_command="echo '{{params.test}}'",
+    params={'test': 'ttt'},
+    dag=dag)
+{% endraw %}```
+
+> python代码中可以使用`Variable.get`和`Variable.set`来操作Variables中的变量，详细用法可以查看airflow源码或官方文档
 
 ## DummyOperator
 
-pass
+DummyOperator不会执行任何任务，但可以用它来组织整个Dag的结构。
 
 ## 例子
+
+该例子展示了以上所有特性的用法
 
 ```python
 from airflow.models import DAG
