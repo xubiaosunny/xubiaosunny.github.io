@@ -123,7 +123,7 @@ parser = MultifieldParser(
     "productType", "saleStatus", "content"], schema=ix.schema)
 query = parser.parse("保险")
 
-with ix.searcher(weighting=scoring.BM25F(B=0.75, id_B=10, companyName_B=10, content_B=1, K1=1.5)) as s:
+with ix.searcher(weighting=scoring.BM25F(content_B=1)) as s:
     results = s.search_page(query, 3)
     print(list(results))
 ```
