@@ -115,7 +115,7 @@ chinese_with_simple_analyser = (
     ChineseWithSimpleTokenizer() | LowercaseFilter() | StemFilter(stemfn=stem, ignore=None, cachesize=50000))
 ```
 
-然后将`chinese_with_simple_analyser`用于条款名字段首先精确查询。
+然后将`chinese_with_simple_analyser`用于条款名字段实现精确查询。
 
 ### 调整词频
 
