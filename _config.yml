@@ -34,7 +34,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-gist
-  - jekyll-admin
   - jekyll-sitemap
 
 # page
