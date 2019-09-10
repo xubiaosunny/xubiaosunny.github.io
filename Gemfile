@@ -22,7 +22,6 @@ group :jekyll_plugins do
   gem "jekyll-paginate"
   gem "jekyll-gist"
   gem 'rouge'
-  gem 'jekyll-admin'
   gem 'jekyll-sitemap'
 end
 
