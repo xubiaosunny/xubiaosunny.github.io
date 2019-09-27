@@ -17,19 +17,19 @@ tags: Latex 向量 矩阵
 $$
 a = \left (
   \begin{array}{c}  
-    $a_{1}$ \\
-    $a_{2}$ \\
+    a_{1} \\
+    a_{2} \\
     \vdots \\
-    $a_{m}$ \\
+    a_{m} \\
   \end{array}
  \right )
 
 b = \left (
     \begin{array}{c}  
-        $b_{1}$ \\
-    $b_{2}$ \\
+        b_{1} \\
+    b_{2} \\
     \vdots \\
-    $b_{m}$ \\
+    b_{m} \\
       \end{array}
     \right )
 $$
