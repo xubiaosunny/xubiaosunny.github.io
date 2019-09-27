@@ -14,7 +14,7 @@ tags: Latex 向量 矩阵
 
 下面所有公式均来自《数据挖掘与分析：概念与算法》
 
-```tex
+$$
 a = \left (
   \begin{array}{c}  
     $a_{1}$ \\
@@ -32,11 +32,11 @@ b = \left (
     $b_{m}$ \\
       \end{array}
     \right )
-```
+$$
 
 ### 点乘
 
-```tex
+$$
 a \cdot b &= a^{T}b \\
 &= \left (
         \begin{array}{cccc}
@@ -51,41 +51,39 @@ a \cdot b &= a^{T}b \\
    \right ) \\
 &= a_{1}b_{1} + a_{1}b_{1} + \cdots + a_{m}b_{m} \\
 &=  \sum_{i=1 }^{m} a_{i}b_{i}
-```
+$$
 
 ### 长度
 
-```tex
+$$
 \left \| a \right \| = \sqrt{a^{T}a} = \sqrt{a_{1}^{2} + a_{2}^{2} + \cdots + a_{m}^{2}} = \sqrt{\sum_{i=1}^{m} a_{i}^{2}}
-```
+$$
 
 ### 单位向量
 
-```tex
+$$
 u = \frac{a}{\left \| a \right \|} = \left ( \frac{1}{\left \| a \right \|} \right ) a
-```
+$$
 
 ### 距离
 
-```tex
+$$
 D(a,b) = \left \| a - b \right \| = \sqrt{(a - b)^T(a - b)} = \sqrt{\sum_{i=1}^{m}(a_{i} - b_{i})^2}
-```
+$$
 
 ### 角度
 
-```tex
+$$
 \cos θ = \frac{a^{T}b}{\left \| a \right \|\left \| b \right \|} = (\frac{a}{\left \| a \right \|})^{T} (\frac{b}{\left \| b \right \|})
-```
+$$
 
 ### 正交投影
 
-```tex
+$$
 p = (\frac{a^{T}b}{a^{T}a})a
-```
+$$
 
 ## Latex语法
-
-我自己就不做记录了在博客，因为我写上去可能也看看不到，因为被js转成了公式[囧]
 
 参考链接：
 
