@@ -37,6 +37,7 @@ $$
 ### 点乘
 
 $$
+\begin{align*}
 a \cdot b &= a^{T}b \\
 &= \left (
         \begin{array}{cccc}
@@ -51,6 +52,7 @@ a \cdot b &= a^{T}b \\
    \right ) \\
 &= a_{1}b_{1} + a_{1}b_{1} + \cdots + a_{m}b_{m} \\
 &=  \sum_{i=1 }^{m} a_{i}b_{i}
+\end{align*}
 $$
 
 ### 长度
