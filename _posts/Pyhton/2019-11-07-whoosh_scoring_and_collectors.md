@@ -48,7 +48,7 @@ class MyBM25FScorer(scoring.BM25FScorer):
 
 其实搜索到的排在后面的数据基本都是不相关的，而且也不可能有用户去查看2w多条记录
 
-于是可以建设匹配的数量来加快检索。
+于是可以减少匹配的数量来加快检索。
 
 ```python
 from whoosh import collectors
