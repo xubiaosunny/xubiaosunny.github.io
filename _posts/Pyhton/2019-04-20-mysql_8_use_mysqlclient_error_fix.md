@@ -64,3 +64,11 @@ sudo ln -s /usr/local/mysql/lib/libmysqlclient.21.dylib /usr/lib/libmysqlclient.
 ```
 
 再运行django就没有报错了
+
+### 2019.12.1更新
+
+升级macOS Catalina后，`/usr/lib`变为只读，禁用SIP也不好使，可以将其软连到`/usr/local/lib`目录下
+
+```bash
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.21.dylib /usr/local/lib/libmysqlclient.21.dylib
+```
