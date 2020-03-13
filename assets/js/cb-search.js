@@ -63,7 +63,6 @@ $(document).ready(function () {
 
     $.getJSON("/assets/cb-search.json", function (data) {
         if (data.code == 0) {
-            console.log(data)
             for (var index in data.data) {
                 var item = data.data[index];
                 names.push(item.title);

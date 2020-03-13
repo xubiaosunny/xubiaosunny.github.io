@@ -1,11 +1,43 @@
 <!-- start tag cloud widget -->
 <div class="widget">
-    <h4 class="title">标签云</h4>
-    <canvas id="side-tag" width="100%">
-    </canvas>
+	<h4 class="title">标签云</h4>
+	<div>
+		<canvas id="side-tag">
+		</canvas>
+	</div>
 </div>
 <script type="text/javascript">
-    var tags = [{% for tag in site.tags %}["{{ tag[0] }}", {{ tag[1].size }}, "{{ site.tags_url }}#{{ tag[0] }}"],{% endfor %}];
-    WordCloud(document.getElementById('side-tag'), { list: tags});
-</script>                      
+	$(document).ready(function () {
+		$.getJSON("/assets/tag_cloud.json", function (res) {
+			if (res.code == 0) {
+				var tags = res.data;
+
+				let avg = 1;
+				for (let t of tags) {
+					//缩小数据差异
+					let scaleData = 0.4;  // 1:不变, <1:缩小差异, >1:放大差异
+					let v = Math.round(Math.pow(t[1], scaleData))
+					t[1] = v;
+					avg = (v + avg) / 2;
+				}
+				let k = 15 / avg;
+				for (let t of tags) {
+					t[1] = t[1] * k;
+				}
+				var options = {
+					list: tags,
+					'minSize': 2,
+					hover: (item, dimension, event) => {
+						console.log(item, dimension, event);
+					},
+					click: (item, dimension, event) => {
+						location.href = "{{ site.tags_url }}#" + item[0];
+					},
+				}
+				// {{ site.tags_url }}#{{ tag[0] }}
+				WordCloud(document.getElementById('side-tag'), options);
+			}
+		});
+	});
+</script>
 <!-- end tag cloud widget -->
