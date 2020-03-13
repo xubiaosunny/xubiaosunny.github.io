@@ -1,0 +1,7 @@
+---
+layout: null
+---
+{
+	"code" : 0 ,
+	"data" : [{% for tag in site.tags %}["{{ tag[0] }}", {{ tag[1].size }}]{% if forloop.rindex != 1  %},{% endif %}{% endfor %}]
+}

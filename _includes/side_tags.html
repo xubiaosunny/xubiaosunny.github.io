@@ -1,33 +1,41 @@
 <!-- start tag cloud widget -->
 <div class="widget">
-    <h4 class="title">标签云</h4>
-    <div class="content tag-cloud" id="side-tag">
-        {% for tag in site.tags limit:20 %}
-        <a href="{{ site.tags_url }}#{{ tag | first }}">{{ tag | first }}</a>
-        {% endfor %}
-    </div>
+	<h4 class="title">标签云</h4>
+	<div>
+		<div id="side-tag2-html" style="height: 400px;">
+		</div>
+	</div>
 </div>
 <script type="text/javascript">
-    function getRandomArrayElements(arr, count) {
-        var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
-        while (i-- > min) {
-            index = Math.floor((i + 1) * Math.random());
-            temp = shuffled[index];
-            shuffled[index] = shuffled[i];
-            shuffled[i] = temp;
-        }
-        return shuffled.slice(min);
-    }
-    var tags = [{% for tag in site.tags %}"{{ tag | first }}"{% if forloop.rindex != 1  %}, {% endif %}{% endfor %}];
-    function set_tags() {
-        let _tags = getRandomArrayElements(tags, 20);
-        let h = '';
-        for (let x of _tags) {
-            h += `<a href="{{ site.tags_url }}#${x}">${x}</a>\n`;
-        }
-        $("#side-tag").html(h)
-    }
-    set_tags();
-    window.setInterval(set_tags, 10000);
-</script>                      
+	$(document).ready(function () {
+		$.getJSON("/assets/tag_cloud.json", function (res) {
+			if (res.code == 0) {
+				var tags = res.data;
+
+				let avg = 1;
+				for (let t of tags) {
+					//缩小数据差异
+					let scaleData = 0.4;  // 1:不变, <1:缩小差异, >1:放大差异
+					let v = Math.round(Math.pow(t[1], scaleData))
+					t[1] = v;
+					avg = (v + avg) / 2;
+				}
+				let k = 15 / avg;
+				for (let t of tags) {
+					t[1] = t[1] * k;
+				}
+				var options = {
+					list: tags,
+					'minSize': 2,
+					hover: (item, dimension, event) => {
+					},
+					click: (item, dimension, event) => {
+						location.href = "{{ site.tags_url }}#" + item[0];
+					},
+				}
+				WordCloud([document.getElementById('side-tag2-html')], options);
+			}
+		});
+	});
+</script>
 <!-- end tag cloud widget -->
