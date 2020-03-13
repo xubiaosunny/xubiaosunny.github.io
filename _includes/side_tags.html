@@ -2,8 +2,8 @@
 <div class="widget">
 	<h4 class="title">标签云</h4>
 	<div>
-		<canvas id="side-tag">
-		</canvas>
+		<div id="side-tag2-html" style="height: 400px;">
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -28,14 +28,12 @@
 					list: tags,
 					'minSize': 2,
 					hover: (item, dimension, event) => {
-						console.log(item, dimension, event);
 					},
 					click: (item, dimension, event) => {
 						location.href = "{{ site.tags_url }}#" + item[0];
 					},
 				}
-				// {{ site.tags_url }}#{{ tag[0] }}
-				WordCloud(document.getElementById('side-tag'), options);
+				WordCloud([document.getElementById('side-tag2-html')], options);
 			}
 		});
 	});
