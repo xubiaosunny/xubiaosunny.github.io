@@ -137,10 +137,10 @@ password: 123456
 上传是直接使用local
 
 ```
-twine upload -r 上传是直接使用local ./dist/my_package-1.0.tar.gz
+twine upload -r local ./dist/my_package-1.0.tar.gz
 ```
 
-> 对于官方pypi上传包的操作也是这样的
+> 对于官方pypi我们首先需要注册账号，上传包的操作和向私有仓库上传是一样的。
 
 ## 参考链接
 
