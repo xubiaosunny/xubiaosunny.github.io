@@ -46,3 +46,9 @@ git pull
 ```shell
 git checkout -b <branch_name> origin/<branch_name>
 ```
+
+## 合并某一次提交(cherry-pick)
+
+```shell
+git cherry-pick [<options>] <commit-ish>
+```
