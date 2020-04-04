@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "mysql8使用mysqlclient报错解决"
-date: 2019-04-20 10:02:03
+date: 2019-04-20 10:02:03 +0800
 categories: 技术
 tags: mysql Django python
 ---

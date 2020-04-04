@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "全文检索调研（Mongodb和Whoosh）"
-date: 2019-07-20 10:14:09
+date: 2019-07-20 10:14:09 +0800
 categories: 技术
 tags: python mongodb whoosh
 ---

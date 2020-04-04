@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Airflow跳过后续任务(ShortCircuitOperator)及BashOperator模版参数传入"
-date: 2019-08-20 18:17:47
+date: 2019-08-20 18:17:47 +0800
 categories: 技术
 tags: airflow
 ---

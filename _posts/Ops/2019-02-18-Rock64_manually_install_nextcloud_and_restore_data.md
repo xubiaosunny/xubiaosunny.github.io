@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "rock64手动安装nextcloud并恢复数据"
-date: 2019-02-18 14:37:00
+date: 2019-02-18 14:37:00 +0800
 categories: 折腾
 tags: rock64 nextcloud linux samba
 ---

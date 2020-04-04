@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Flask项目与clery实践"
-date: 2019-07-08 23:43:02
+date: 2019-07-08 23:43:02 +0800
 categories: 技术
 tags: python flask celery
 ---

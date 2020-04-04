@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Debian9设置区时和语言"
-date: 2019-01-21 23:10:10
+date: 2019-01-21 23:10:10 +0800
 categories: 技术
 tags: Debian
 ---

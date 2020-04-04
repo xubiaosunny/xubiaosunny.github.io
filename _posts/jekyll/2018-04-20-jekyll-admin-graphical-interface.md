@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用jekyll-admin为jekyll提供图形界面"
-date: 2018-04-20 22:55:00
+date: 2018-04-20 22:55:00 +0800
 categories: 折腾
 tags: jekyll vscode
 ---

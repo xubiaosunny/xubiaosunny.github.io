@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular动态加载js文件"
-date: 2018-10-31 17:34:47
+date: 2018-10-31 17:34:47 +0800
 categories: 技术
 tags: Angular
 ---

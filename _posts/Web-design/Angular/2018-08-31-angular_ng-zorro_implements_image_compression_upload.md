@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular ng-zorro 实现图片压缩上传（附加js实现）"
-date: 2018-08-31 17:04:01
+date: 2018-08-31 17:04:01 +0800
 categories: 技术
 tags: Angular ng-zorro
 ---

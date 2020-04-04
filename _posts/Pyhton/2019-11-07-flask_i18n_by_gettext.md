@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用gettext为flask添加国际化"
-date: 2019-11-07 19:00:07
+date: 2019-11-07 19:00:07 +0800
 categories: 技术
 tags: flask i18n gettext
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Smaba搭建共享服务"
-date: 2018-08-01 23:13:24
+date: 2018-08-01 23:13:24 +0800
 categories: 技术
 tags: Samba
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "bootstap modal实现大图查看"
-date: 2018-04-22 19:37:37
+date: 2018-04-22 19:37:37 +0800
 categories: 技术
 tags: bootstrap JavaScript
 ---

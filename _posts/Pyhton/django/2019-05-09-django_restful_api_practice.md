@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Django restful api 实践"
-date: 2019-05-09 23:38:03
+date: 2019-05-09 23:38:03 +0800
 categories: 技术
 tags: Django restful 认证
 ---

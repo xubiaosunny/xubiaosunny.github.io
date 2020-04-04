@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "python3生成图片验证码并在angluar中显示"
-date: 2018-08-22 17:59:48
+date: 2018-08-22 17:59:48 +0800
 categories: 技术
 tags: captcha python Angular
 ---

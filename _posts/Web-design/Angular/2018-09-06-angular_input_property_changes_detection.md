@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular 使用@Input()检测数据变更"
-date: 2018-09-06 17:46:56
+date: 2018-09-06 17:46:56 +0800
 categories: 技术
 tags: Angular
 ---
