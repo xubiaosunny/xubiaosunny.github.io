@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!python3
 # -*- coding: utf-8 -*-
 import os
 import argparse
@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 def create_post(name, title, categories='', tags=''):
     date_str = datetime.date.today().strftime("%Y-%m-%d")
     file_name = date_str + '-' + name + '.md'
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S +0800")
     with open(os.path.join(BASE_DIR, '_posts/{}'.format(file_name)), 'w+') as f:
         head = POSTHEAD.format(title=title, time=now, categories=" ".join(categories),
                                tags=" ".join(tags))
