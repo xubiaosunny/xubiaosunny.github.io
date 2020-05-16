@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "小米路由器3安装SS客户端"
-date: 2018-05-26 15:24:28
+date: 2018-05-26 15:24:28 +0800
 categories: 折腾 
 tags: 小米路由器 shadowsocks ss 科学上网
 ---

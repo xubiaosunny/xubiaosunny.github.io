@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Zabbix 安装"
-date: 2018-06-10 00:16:31
+date: 2018-06-10 00:16:31 +0800
 categories: 技术
 tags: zabbix
 ---

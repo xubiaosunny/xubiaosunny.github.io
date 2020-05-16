@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "矩阵向量及使用Latex书写数学公式"
-date: 2019-09-27 20:25:07
+date: 2019-09-27 20:25:07 +0800
 categories: 数学
 tags: Latex 向量 矩阵
 ---

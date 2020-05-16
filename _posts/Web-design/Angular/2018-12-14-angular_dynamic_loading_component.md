@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular动态加载组件"
-date: 2018-12-14 10:48:31
+date: 2018-12-14 10:48:31 +0800
 categories: 技术
 tags: Angular
 ---

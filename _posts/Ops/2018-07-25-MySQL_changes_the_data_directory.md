@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "mysql更改data目录"
-date: 2018-07-25 11:29:02
+date: 2018-07-25 11:29:02 +0800
 categories: 技术
 tags: mysql
 ---

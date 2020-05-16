@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular下载文件"
-date: 2018-10-24 17:33:25
+date: 2018-10-24 17:33:25 +0800
 categories: 技术
 tags: Angular blob base64
 ---

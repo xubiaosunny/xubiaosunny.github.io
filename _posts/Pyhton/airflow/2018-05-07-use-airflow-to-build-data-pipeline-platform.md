@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用airflow搭建data pipeline平台"
-date: 2018-05-07 23:38:52
+date: 2018-05-07 23:38:52 +0800
 categories: 技术
 tags: airflow python data-pipeline
 ---

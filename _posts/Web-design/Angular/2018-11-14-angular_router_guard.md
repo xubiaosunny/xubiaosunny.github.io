@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular路由守卫验证用户登陆状态"
-date: 2018-11-14 17:46:31
+date: 2018-11-14 17:46:31 +0800
 categories: 技术
 tags: Angular
 ---

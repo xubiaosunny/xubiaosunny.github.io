@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular组件类的继承"
-date: 2018-08-30 10:13:30
+date: 2018-08-30 10:13:30 +0800
 categories: 技术
 tags: Angular TypeScript
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "创建私有pypi仓库及上传python包"
-date: 2020-03-16 20:41:30
+date: 2020-03-16 20:41:30 +0800
 categories: 技术
 tags: python pypi
 ---

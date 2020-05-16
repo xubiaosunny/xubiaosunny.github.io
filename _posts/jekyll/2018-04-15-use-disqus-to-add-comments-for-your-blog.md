@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用disqus为博客添加评论功能"
-date: 2018-04-15 23:02:57
+date: 2018-04-15 23:02:57 +0800
 categories: 折腾
 tags: disqus jekyll
 ---

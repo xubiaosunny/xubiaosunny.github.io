@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "vue组件动态插槽实现"
-date: 2019-11-15 19:36:52
+date: 2019-11-15 19:36:52 +0800
 categories: 技术 
 tags: vue
 ---

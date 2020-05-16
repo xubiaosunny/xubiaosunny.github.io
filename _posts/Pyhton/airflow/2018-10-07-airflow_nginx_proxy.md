@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nginx同一域名下代理airflow与flower"
-date: 2018-10-07 22:03:50
+date: 2018-10-07 22:03:50 +0800
 categories: 技术
 tags: Nginx airflow flower
 ---

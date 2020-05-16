@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用Docker运行整套项目组件"
-date: 2019-05-21 14:27:33
+date: 2019-05-21 14:27:33 +0800
 categories: 技术
 tags: Docker docker-compose Django Celery
 ---

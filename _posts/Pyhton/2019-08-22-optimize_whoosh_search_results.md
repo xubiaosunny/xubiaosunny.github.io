@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "在垂直领域内优化Whoosh搜索结果"
-date: 2019-08-22 17:36:02
+date: 2019-08-22 17:36:02 +0800
 categories: 技术
 tags: Whoosh jieba BM25F
 ---

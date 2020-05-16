@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular @Input()根据传入值自适应显示"
-date: 2018-09-18 18:02:07
+date: 2018-09-18 18:02:07 +0800
 categories: 技术
 tags: Angular html
 ---

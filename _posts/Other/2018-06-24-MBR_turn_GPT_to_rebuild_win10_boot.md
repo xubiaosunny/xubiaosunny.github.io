@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MBR转GPT重建win10引导"
-date: 2018-06-24 13:43:54
+date: 2018-06-24 13:43:54 +0800
 categories: 折腾
 tags: ESP UEFI MBR GPT
 ---

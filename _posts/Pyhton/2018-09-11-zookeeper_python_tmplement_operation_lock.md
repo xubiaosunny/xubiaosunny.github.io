@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "python使用Zookeeper实现操作锁"
-date: 2018-09-11 18:45:55
+date: 2018-09-11 18:45:55 +0800
 categories: 技术
 tags: Zookeeper python
 ---

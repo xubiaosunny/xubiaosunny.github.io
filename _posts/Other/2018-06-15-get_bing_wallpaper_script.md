@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "mac自动设置bing壁纸"
-date: 2018-06-15 21:50:02
+date: 2018-06-15 21:50:02 +0800
 categories: 折腾
 tags: bing 爬虫
 ---

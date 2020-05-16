@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "KVM镜像制作及挂载镜像文件"
-date: 2019-02-14 23:01:23
+date: 2019-02-14 23:01:23 +0800
 categories: 技术
 tags: KVM
 ---

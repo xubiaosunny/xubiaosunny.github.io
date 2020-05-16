@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "增量备份nextcloud数据--rsync踩坑及发送crontab通知邮件"
-date: 2019-02-28 22:37:43
+date: 2019-02-28 22:37:43 +0800
 categories: 折腾
 tags: nextcloud rsync crontab
 ---
