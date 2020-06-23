@@ -8,7 +8,7 @@ layout: home
         <div class="post-meta">
             <time class="post-date"title="">
                 <i class="far fa-clock"></i>
-                {% assign date_format = site.date_format.title %}{{ post.date | date: "%Y-%m-%d %H:%M:%S" }}
+                {% assign date_format = site.date_format.title %}{{ post.date | date: "%Y-%m-%d %H:%M:%S %Z" }}
             </time>
         </div>
     </div>

@@ -40,7 +40,7 @@ layout: home
                             &nbsp;
                             <time datetime="{{ post.date | date_to_string }}">
                                 <i class="far fa-clock"></i>
-                                {% assign date_format = site.date_format.title %}{{ post.date | date: "%Y-%m-%d %H:%M:%S" }}
+                                {% assign date_format = site.date_format.title %}{{ post.date | date: "%Y-%m-%d %H:%M:%S %Z" }}
                             </time>
                         </li>
                         {% endfor %}  
