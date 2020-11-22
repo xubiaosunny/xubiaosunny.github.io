@@ -102,4 +102,4 @@ tags: 黑苹果 OpenCore Intel 10400
 ## EFI分享
 
 分享一下我的EFI，我把三码的部分去掉了，需要自己生成一下自己的三码。
-链接: https://pan.baidu.com/s/1S01ALT_odipHj0awJ1hkeQ提取码: u33n
+链接: [https://pan.baidu.com/s/1S01ALT_odipHj0awJ1hkeQ](https://pan.baidu.com/s/1S01ALT_odipHj0awJ1hkeQ)   提取码: u33n
