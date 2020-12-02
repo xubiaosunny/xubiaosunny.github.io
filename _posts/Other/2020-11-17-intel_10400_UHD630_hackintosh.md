@@ -103,3 +103,9 @@ tags: 黑苹果 OpenCore Intel 10400
 
 分享一下我的EFI，我把三码的部分去掉了，需要自己生成一下自己的三码。
 链接: [https://pan.baidu.com/s/1S01ALT_odipHj0awJ1hkeQ](https://pan.baidu.com/s/1S01ALT_odipHj0awJ1hkeQ)   提取码: u33n
+
+## 加装显卡(2020-12-02)
+
+回老家把我之前的RX460卸下来了，正好装到这个机器上，安装独显后识别不到核显了，也无法核显加速。解决方法为
+
+在BIOS中将`Chipset -> Sysyem Agent(SA) Configuration -> Graphics Configuration -> Internal Graphics` 改为`Enable`（默认为Auto），EFI不用修改。
