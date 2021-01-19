@@ -201,6 +201,11 @@ class MyApi {
           navigatorKey.currentState.pushNamed('/login');
         }
         break;
+    case 403:
+        {
+          _showErrorMessage('权限不足');
+        }
+        break;
       case 404:
         {
           navigatorKey.currentState.pop();
