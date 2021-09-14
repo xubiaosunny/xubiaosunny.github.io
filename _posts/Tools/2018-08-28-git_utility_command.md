@@ -52,3 +52,12 @@ git checkout -b <branch_name> origin/<branch_name>
 ```shell
 git cherry-pick [<options>] <commit-ish>
 ```
+
+## 从命名树创建文件的存档(git archive)
+
+```shell
+# 以当前分支打包代码
+git archive -o test.zip HEAD
+# 以master分支打包代码
+git archive -o test.zip master
+```
