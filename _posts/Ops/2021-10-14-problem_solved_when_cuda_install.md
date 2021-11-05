@@ -37,6 +37,11 @@ docker run --rm --runtime=nvidia -ti -v /data:/data nvidia/cuda:10.1-cudnn7-runt
 apt-get remove --purge nvidia-\*
 ```
 
+注意：
+
+* 安装nvidia-docker2后需要重启docker
+* 容器内部的CUDA应该小于等于宿主机的CUDA版本，否则会报错（forward compatibility was attempted on non supported HW）
+
 
 ## TensorRT
 
