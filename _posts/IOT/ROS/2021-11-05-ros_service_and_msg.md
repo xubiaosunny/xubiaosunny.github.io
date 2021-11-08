@@ -37,7 +37,7 @@ add_service_files(
 
 服务函数
 
-```C++
+```c++
 /*
 获取录音音频
 */
@@ -58,6 +58,15 @@ bool Get_Record_Pcm(xf_mic_asr_offline::Get_Record_Pcm_srv::Request &req, xf_mic
 	}
 	record_pcm_buf.clear();
 	return true;
+}
+
+int main(int argc, char *argv[])
+{
+	ros::init(argc, argv, "xf_asr_offline_node");
+	ros::NodeHandle ndHandle("~");
+
+	/*srv　获取录音pcm */
+	ros::ServiceServer service_record_pcm = ndHandle.advertiseService("get_record_pcm_srv", Get_Record_Pcm);
 }
 ```
 
@@ -122,6 +131,7 @@ int main(int argc, char *argv[])
 	ros::init(argc, argv, "xf_asr_offline_node");
 	ros::NodeHandle ndHandle("~");
 	pub_pcm = ndHandle.advertise<xf_mic_asr_offline::Pcm_Msg>(pcm_topic, 1);
+}
 ```
 
 
