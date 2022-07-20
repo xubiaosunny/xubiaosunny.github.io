@@ -24,6 +24,7 @@ twitter_username: xubiaosunny
 github_username:  xubiaosunny
 
 # Build settings
+# permalink: /post/:year/:month/:day/:title:output_ext
 incremental: true
 highlighter: rouge
 markdown: kramdown
