@@ -2,7 +2,7 @@
 layout: post
 title: "nextcloud使用mysql8.0、添加redis缓存以及解决升级超时问题"
 date: 2020-02-29 14:13:24 +0800
-categories: 
+categories: 折腾
 tags: nextcloud mysql redis
 ---
 
