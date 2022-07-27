@@ -19,12 +19,12 @@ email: xubiaosunny@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is xubiao's blog!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.123090.xyz" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://xubiaosunny.top" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xubiaosunny
 github_username:  xubiaosunny
 
 # Build settings
-# permalink: /post/:year/:month/:day/:title:output_ext
+permalink: /post/:title:output_ext
 incremental: true
 highlighter: rouge
 markdown: kramdown
