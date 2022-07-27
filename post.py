@@ -3,6 +3,9 @@
 import os
 import argparse
 import datetime
+import random
+import string
+
 
 DESCRIPTION = """
     Post automated tools
@@ -22,7 +25,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def create_post(name, title, categories='', tags=''):
     date_str = datetime.date.today().strftime("%Y-%m-%d")
-    file_name = date_str + '-' + name + '.md'
+    random_name = "".join(random.sample(string.ascii_lowercase + string.digits, 4))
+    file_name = date_str + '-' + name + '_' + random_name + '.md'
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S +0800")
     with open(os.path.join(BASE_DIR, '_posts/{}'.format(file_name)), 'w+') as f:
         head = POSTHEAD.format(title=title, time=now, categories=" ".join(categories),
