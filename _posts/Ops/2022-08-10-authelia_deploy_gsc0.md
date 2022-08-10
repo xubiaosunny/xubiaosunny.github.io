@@ -6,13 +6,13 @@ categories: 技术
 tags: Authelia SSO 2FA
 ---
 
-> 文中的所有示例配置文件中域名是`auth.example.com`，各种加密用的key和secret都为`123456789ABCDEF`，这些配置请根据实际进行替换。
+> 文中的所有示例配置文件中域名是`auth.example.com`，各种加密用的key和secret都为`123456789ABCDEF`，这些配置请根据实际进行替换。并且根据实际情况将配置中的相对路径改为绝对路径。
 
 ## 配置
 
 创建目录`authelia`，在目录下创建`configuration.yml`和`users_database.yml`两个配置文件
 
-### `configuration.yml`
+### configuration.yml
 
 ```yaml
 theme: light
