@@ -12,7 +12,7 @@ tags: Authelia SSO 2FA
 
 创建目录`authelia`，在目录下创建`configuration.yml`和`users_database.yml`两个配置文件
 
-### `configuration.yml`
+### configuration.yml
 
 ```yaml
 theme: light
