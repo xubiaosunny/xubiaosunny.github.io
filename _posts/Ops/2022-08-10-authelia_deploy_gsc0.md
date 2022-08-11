@@ -65,6 +65,12 @@ notifier:
     filename: ./notification.txt
 ```
 
+校验配置文件：
+
+```bash
+./authelia validate-config --config configuration.yml
+```
+
 配置简介：
 
 * `authentication_backend`用户配置用户认证后端，例子为file认证，可配置ldap认证
