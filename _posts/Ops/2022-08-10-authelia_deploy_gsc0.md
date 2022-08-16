@@ -76,7 +76,7 @@ notifier:
 * `authentication_backend`用户配置用户认证后端，例子为file认证，可配置ldap认证
 * `notifier`配置提醒，例子中使用文件来接收提醒，可配置为STMP邮件发送
 * `storage`配置数据存储，例子中使用sqlite，可改为mysql或者postgres等其他数据库
-* `access_control`用于配置使用Authelia认证的web服务
+* `access_control`用于访问控制
 
 具体配置参考:
 
