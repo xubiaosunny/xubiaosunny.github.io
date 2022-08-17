@@ -13,7 +13,7 @@ Authelia可以作为OIDC(OpenID Connect)服务，本文以`Gitea`为例记录一
 
 ## Authelia配置
 
-Authelia中通过`identity_providers`配置项来配置，一下为官方的例子。
+Authelia中通过`identity_providers`配置项来配置，以下为官方的例子。
 
 ```yaml
 ...
@@ -92,21 +92,21 @@ identity_providers:
 ....
 ```
 
-1. 首先替换`hmac_secret`，使用官方推荐方法生产随机字符串替换
+1 首先替换`hmac_secret`，使用官方推荐方法生产随机字符串替换
 
 ```bash
 LENGTH=64
 tr -cd '[:alnum:]' < /dev/urandom | fold -w "${LENGTH}" | head -n 1 | tr -d '\n' ; echo
 ```
 
-2. 替换自己生成的`issuer_private_key`，用以下命令生成的`private.pem`中的内容粘贴替换
+2 替换自己生成的`issuer_private_key`，用以下命令生成的`private.pem`中的内容粘贴替换
 
 ```bash
 openssl genrsa -out private.pem 4096
 openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 ```
 
-3. 修改`allowed_origins`防止跨域，`*`代表所有域名，可替换为具体域名
+3 修改`allowed_origins`防止跨域，`*`代表所有域名，可替换为具体域名
 
 ```yaml
 identity_providers:
@@ -116,7 +116,7 @@ identity_providers:
         - "*"
 ```
 
-4. 配置`clients`，添加`gitea`，注意替换自己的`secret`和`redirect_uris`
+4 配置`clients`，添加`gitea`，注意替换自己的`secret`和`redirect_uris`
 
 ```yaml
 identity_providers:
@@ -137,7 +137,7 @@ identity_providers:
 
 ## Gitea配置
 
-1. 编辑`app.ini`
+1 编辑`app.ini`
 
 ```ini
 [openid]
@@ -146,7 +146,7 @@ ENABLE_OPENID_SIGNUP = true
 WHITELISTED_URIS     = auth.example.com
 ```
 
-2. 在Gitea后台添加认证源
+2 在Gitea后台添加认证源
 
 ![](/assets/images/post/截屏2022-08-16 11.30.53.png)
 
