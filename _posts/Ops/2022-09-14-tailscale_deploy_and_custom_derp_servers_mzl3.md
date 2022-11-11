@@ -50,7 +50,7 @@ FROM golang:1.19
 # 在国内可以加上这行使用国内源
 # RUN go env -w  GOPROXY=https://goproxy.cn,direct
 RUN go install tailscale.com/cmd/derper@main
-ENTRYPOINT ['derper']
+ENTRYPOINT ["/go/bin/derper"]
 ```
 
 构建镜像
@@ -63,6 +63,15 @@ docker运行derper服务
 
 ```bash
 docker run -d --name derper -p 8001:8001 -p 3478:3478 derper -a :8001
+```
+
+使用`--verify-clients`参数开启验证，防止他人使用我们的derper，开启客户端验证的话需要该derper也是Tailscale节点
+
+```bash
+docker run -d --name derper \
+-v /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock \
+-p 8001:8001 -p 3478:3478 
+derper -a :8001 --verify-clients
 ```
 
 使用nginx配置https并代理derper，以域名`derper.example.com`为例，在`/etc/nginx/conf.d/derper.example.com.conf`文件中写入如下配置
@@ -92,4 +101,33 @@ relaod配置
 
 ```bash
 nginx -s reload
+```
+
+## 配置 acls
+
+https://login.tailscale.com/admin/acls
+
+```json
+...
+
+  "derpMap": {
+		"OmitDefaultRegions": true,
+		"Regions": {
+			"900": {
+				"RegionID":   900,
+				"RegionCode": "myderp",
+				"Nodes": [
+					{
+						"Name":     "1",
+						"RegionID": 900,
+						"HostName": "derper.example.com",
+						"STUNPort": 3478,
+						"DERPPort": 443,
+					},
+				],
+			},
+		},
+	},
+
+...
 ```
