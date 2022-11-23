@@ -2,11 +2,11 @@
 layout: post
 title: "帕拉迪堡垒机软件(趣运维.app)不能登陆问题调试"
 date: 2022-11-23 14:52:16 +0800
-categories: 
-tags: 
+categories: 技术
+tags: 趣运维 SSH
 ---
 
-公司用的帕拉迪的堡垒的软件，之前一直在mac下使用没有问题，最近安装了macOS Vetura，再次使用的时候 iterm2 报了以下错误：
+公司用的帕拉迪的堡垒机软件，之前一直在mac下使用没有问题，最近安装了macOS Vetura，再次使用的时候 iterm2 报了以下错误：
 
 ```
 A session ended very soon after starting. Check that the command in profile "Default" is correct.
