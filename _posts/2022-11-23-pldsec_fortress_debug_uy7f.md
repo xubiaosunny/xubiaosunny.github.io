@@ -168,7 +168,8 @@ if {$os_status == 0} {
 结合脚本分析，应该在`~/.ssh/config`添加一条配置即可
 
 ```
-echo "HostkeyAlgorithms +ssh-dss" >> ~/.ssh/config
+Host xxx.demo.com
+    HostkeyAlgorithms +ssh-dss
 ```
 
 再次测试使用`终端.app`会报一个其他错误，使用`iTerm2`时则没有问题了，可以连接到服务器。
