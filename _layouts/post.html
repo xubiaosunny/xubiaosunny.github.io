@@ -6,17 +6,21 @@ comments: true
     <div class="row">
         <div class="col-md-8">
 			<article id="110" class="post">
-
 					<header class="post-head">
 							<h1 class="post-title">{{- page.title -}}</h1>
 							<section class="post-meta">
 								<time class="post-date">
-									<i class="far fa-clock"></i>
+									<i class="fas fa-clock"></i>
 									{{- page.date | date: "%Y-%m-%d %H:%M:%S %Z" -}}
 								</time>
-								
-								<i class="far fa-comments"></i>
-								<a href="{{ page.url }}#disqus_thread"></a>
+								<span>
+									<i class="fas fa-eye"></i>
+									<span class="waline-pageview-count">0</span>
+								</span>	
+								<span>
+									<i class="fas fa-comments"></i>
+									<a class="waline-comment-count" href="#waline" style="text-decoration: none; color: #959595;">0</a>
+								</span>	
 							</section>
 					</header>
 			
@@ -35,7 +39,7 @@ comments: true
 					</footer>
 			
 			</article>
-			<div id="disqus_thread"></div>
+			<div id="waline"></div>
         </div>
         <aside class="col-md-4 sidebar">
             {%- include side_tags.html -%}
@@ -65,39 +69,22 @@ comments: true
 	});
 </script>
 
+<!-- Waline -->
+<style>
+	#waline .wl-panel{
+		border-radius: 0;
+		margin: 0;
+	}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<script type="module">
+	import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
 
-<!-- disqus -->
-<script id="dsq-count-scr" src="//xubiaosunny.disqus.com/count.js" async></script>
-<script>
-
-// Adds the onNewComment callback to the disqus_config of the embed code
-// that sends 'New Comment' events over to Google Analytics.
-// The callback can also be used for any other analytics service like Parse.ly, Chartbeat, Mixpanel
-var disqus_config = function() {
-	this.callbacks.onNewComment = [function(comment) {
-			ga('send', {
-			'hitType': 'event',            // Required.
-			'eventCategory': 'Comments',   // Required.
-			'eventAction': 'New Comment',  // Required.
-			'eventLabel': 'New Comment'
-		});
-	}];
-};
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://xubiaosunny.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
+	init({
+		el: '#waline',
+		path: window.location.pathname,
+		pageview: true,
+		comment: true,
+		serverURL: 'https://waline.xubiaosunny.top',
+	});
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
