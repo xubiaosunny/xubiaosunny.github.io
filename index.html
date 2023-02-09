@@ -7,9 +7,17 @@ layout: home
         <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
         <div class="post-meta">
             <time class="post-date"title="">
-                <i class="far fa-clock"></i>
+                <i class="fas fa-clock"></i>
                 {% assign date_format = site.date_format.title %}{{ post.date | date: "%Y-%m-%d %H:%M:%S %Z" }}
             </time>
+            <span>
+                <i class="fas fa-eye"></i>
+                <span class="waline-pageview-count" data-path="{{ post.url }}">0</span>
+            </span>	
+            <span>
+                <i class="fas fa-comments"></i>
+                <span class="waline-comment-count" data-path="{{ post.url }}">0</span>
+            </span>	
         </div>
     </div>
     <div class="post-content">
@@ -50,3 +58,17 @@ layout: home
         </li>
     </ul>
 </nav>
+
+<!-- Waline -->
+<script type="module">
+	import { pageviewCount, commentCount } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    let serverURL = 'https://waline.xubiaosunny.top';
+	pageviewCount({
+		path: window.location.pathname,
+		serverURL: serverURL,
+	});
+	commentCount({
+		path: window.location.pathname,
+		serverURL: serverURL,
+	});
+</script>
