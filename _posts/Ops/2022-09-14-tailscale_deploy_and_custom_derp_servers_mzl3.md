@@ -62,7 +62,7 @@ docker build . -t derper:latest
 docker运行derper服务
 
 ```bash
-docker run -d --name derper -p 8001:8001 -p 3478:3478 derper -a :8001
+docker run -d --name derper -p 8001:8001 -p 3478:3478/udp derper -a :8001
 ```
 
 使用`--verify-clients`参数开启验证，防止他人使用我们的derper，开启客户端验证的话需要该derper也是Tailscale节点
@@ -70,7 +70,7 @@ docker run -d --name derper -p 8001:8001 -p 3478:3478 derper -a :8001
 ```bash
 docker run -d --name derper \
 -v /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock \
--p 8001:8001 -p 3478:3478 
+-p 8001:8001 -p 3478:3478/udp 
 derper -a :8001 --verify-clients
 ```
 
@@ -110,24 +110,24 @@ https://login.tailscale.com/admin/acls
 ```json
 ...
 
-  "derpMap": {
-		"OmitDefaultRegions": true,
-		"Regions": {
-			"900": {
-				"RegionID":   900,
-				"RegionCode": "myderp",
-				"Nodes": [
-					{
-						"Name":     "1",
-						"RegionID": 900,
-						"HostName": "derper.example.com",
-						"STUNPort": 3478,
-						"DERPPort": 443,
-					},
-				],
-			},
-		},
-	},
+    "derpMap": {
+        "OmitDefaultRegions": true,
+        "Regions": {
+            "900": {
+                "RegionID":   900,
+                "RegionCode": "myderp",
+                "Nodes": [
+                    {
+                        "Name":     "1",
+                        "RegionID": 900,
+                        "HostName": "derper.example.com",
+                        "STUNPort": 3478,
+                        "DERPPort": 443,
+                    },
+                ],
+            },
+        },
+    },
 
 ...
 ```
