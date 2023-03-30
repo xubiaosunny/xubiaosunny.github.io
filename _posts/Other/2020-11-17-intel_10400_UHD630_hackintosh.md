@@ -23,8 +23,8 @@ tags: 黑苹果 OpenCore Intel 10400
 
 ## 黑苹果安装
 
-具体U盘制作可以参考我之前的黑苹果博客《[讯景RX460安装黑苹果](/折腾/2018/07/31/XFX_RX450_Creating_Hackintosh.html)》和
-《[AMD 3700x使用vanilla安装黑苹果](/折腾/2020/06/23/amd_3700x_b450_hackintosh.html)》，
+具体U盘制作可以参考我之前的黑苹果博客《[讯景RX460安装黑苹果](/post/XFX_RX450_Creating_Hackintosh.html)》和
+《[AMD 3700x使用vanilla安装黑苹果](/post/amd_3700x_b450_hackintosh.html)》，
 这里我主要记录一下安装过程中遇到的问题，主要是驱动核显来显示和计算的问题。
 
 另外还是参考一下[Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，这里面
