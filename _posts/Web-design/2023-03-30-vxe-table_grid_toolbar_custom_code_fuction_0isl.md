@@ -94,3 +94,35 @@ toolbarConfig: {
   ],
 },
 ```
+
+以上方式适用于全局，如果为单个页面添加指令code处理，可以在`vxe-grid`上添加`toolbar-button-click`事件
+
+```vue
+...
+
+<template>
+  <vxe-grid ref='xGrid' v-bind="gridOptions" 
+    @toolbar-button-click="toolbarButtonClickEvent">
+  </vxe-grid>
+</template>
+
+...
+
+<script>
+
+...
+
+  methods: {
+    toolbarButtonClickEvent ({ code }) {
+      const $table = this.$refs.xGrid
+      switch (code) {
+        case 'insert_bottom_actived':
+          $table.insertAt({}, -1).then(({ row }) => $table.setEditRow(row))
+          break
+      }
+    },
+  }
+
+...
+</script>
+```
