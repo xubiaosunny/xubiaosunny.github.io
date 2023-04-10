@@ -19,7 +19,7 @@ tags: python PDF reportlab pikepdf PyPDF2 pymupdf
 这三个包除了`pymupdf`性能强之外，还有一些其他区别，主要在打水印方面。
 
 * `pikepdf` `PyPDF2`添加的水印为PDF文件，`pymupdf`是图片文件。
-* `pikepdf`可以为一页添加多个水印（可以总结设置几行几列，很方便），
+* `pikepdf`可以为一页添加多个水印（可以直接设置几行几列，很方便），
 * `PyPDF2`看起来只能添加一个水印，而且位置控制不方便，需要定制水印PDF的大小以便契合每一页，
 * `pymupdf`一般也只一页添加一个水印，理论上可以添加多个，但需要自己实现计算好每个水印的位置
 
