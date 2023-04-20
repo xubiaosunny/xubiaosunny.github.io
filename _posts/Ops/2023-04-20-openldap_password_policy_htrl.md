@@ -248,7 +248,7 @@ ldap_bind: Success (0); Password must be changed
 dn:uid=test1,ou=users,dc=example,dc=com
 Result: Success (0)
 
-# 密码过期输出）
+# 密码过期输出
 ldap_bind: Invalid credentials (49); Password expired
 ```
 
