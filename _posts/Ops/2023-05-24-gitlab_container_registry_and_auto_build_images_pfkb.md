@@ -86,13 +86,13 @@ docker run --rm -it -v gitlab-runner-config:/etc/gitlab-runner gitlab/gitlab-run
 
 ### gitlab-ci执行时报错解决
 
-1. `Post http://docker:2375/v2/auth: dial tcp: lookup docker on 169.254.169.254:53: no such host`
+#### `Post http://docker:2375/v2/auth: dial tcp: lookup docker on 169.254.169.254:53: no such host`
 
 解决方法：设置`privileged = true`
 
 参考链接；https://forum.gitlab.com/t/error-during-connect-post-http-docker-2375-v1-40-auth-dial-tcp-lookup-docker-on-169-254-169-254-no-such-host/28678/3
 
-2. `Cannot connect to the Docker daemon at tcp://docker:2375/. Is the docker daemon running?`
+#### `Cannot connect to the Docker daemon at tcp://docker:2375/. Is the docker daemon running?`
 
 解决方法：添加docker.sock的映射，`volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache"]`
 
@@ -208,8 +208,8 @@ docker-build:
 [root@centos ~]# docker pull example.com:8993/bds/test-app:latest
 latest: Pulling from bds/test-app
 Digest: sha256:8835de3b55e288188c0368b6b0994642528a01b635841f7e9681928c79dde789
-Status: Image is up to date for bace-dev.fosunpharma.com:8993/bds/test-app:latest
-bace-dev.fosunpharma.com:8993/bds/test-app:latest
+Status: Image is up to date for example.com:8993/bds/test-app:latest
+example.com:8993/bds/test-app:latest
 # 运行查看输出
 [root@centos ~]# docker run --rm -it example.com:8993/bds/test-app:latest
 hello world
