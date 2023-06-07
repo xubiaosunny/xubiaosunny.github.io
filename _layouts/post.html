@@ -42,8 +42,12 @@ comments: true
 			<div id="waline"></div>
         </div>
         <aside class="col-md-4 sidebar">
-            {%- include side_tags.html -%}
-            {%- include side_categories.html -%}
+			<div class="widget table-of-contents">
+				<h4 class="title">目录</h4>
+				<div class="content category">
+					{% include toc.html html=content class="" id="my_toc" h_min=2 h_max=3 %}
+				</div>
+			</div>
         </aside>
     </div>
 </div>
@@ -67,6 +71,15 @@ comments: true
 			$('#img-modal').modal('hide');
 		})
 	});
+	let parent = document.querySelector('.table-of-contents').parentElement;
+
+	while (parent) {
+	const hasOverflow = getComputedStyle(parent).overflow;
+	if (hasOverflow !== 'visible') {
+		console.log(hasOverflow, parent);
+	}
+	parent = parent.parentElement;
+	}
 </script>
 
 <!-- Waline -->
