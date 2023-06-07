@@ -46,7 +46,7 @@ MinIO有两个服务（API提供接口和Console提供后台管理页面），Ou
 
 代理MinIO API
 
-```properties
+```nginx
 server {
   listen 8713 ssl http2;
   listen [::]:8713 ssl http2;
@@ -73,7 +73,7 @@ server {
 
 代理MinIO Console
 
-```properties
+```nginx
 server {
   listen 8714 ssl http2;
   listen [::]:8714 ssl http2;
@@ -176,7 +176,7 @@ docker run -d --name outline \
 
 Nginx代理并提供HTTPS
 
-```properties
+```nginx
 server {
   listen 8715 ssl http2;
   listen [::]:8715 ssl http2;
