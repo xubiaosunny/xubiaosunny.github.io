@@ -210,4 +210,14 @@
 }
 .highlight {
   background-color: #f8f8f8;
+  padding: .25em .25em 0 .25em;
+}
+.post-content blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+  margin-bottom: 16px;
+  margin-top: 0;
+  line-height: 24px;
+  font-size: 90%;
 }
