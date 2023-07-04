@@ -107,7 +107,7 @@ worksheet.set_row(0, 20, cell_format)
 
 https://xlsxwriter.readthedocs.io/format.html#format
 
-通过`workbook.add_format`添加`Format`示例，通过属性(Property)或者类方法(Method Name)来配置excel表格的样式
+通过`workbook.add_format`添加`Format`实例，通过属性(Property)或者类方法(Method Name)来配置excel表格的样式
 
 | Category   | Description	     |  Property	      | Method Name          |
 | ---------- | ----------------- | ------------------ | -------------------- |
