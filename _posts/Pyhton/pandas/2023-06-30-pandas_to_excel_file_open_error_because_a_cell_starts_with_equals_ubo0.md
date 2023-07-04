@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "由于单元格等号（“=”）开头导致Pandas导出的excel文件有问题的解决"
+title: "由于单元格等号（“=”）开头导致Pandas导出的excel文件有问题解决"
 date: 2023-06-30 15:17:55 +0800
 categories: 技术
 tags: Pandas xlsxwriter
