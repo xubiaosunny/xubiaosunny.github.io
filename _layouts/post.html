@@ -81,6 +81,11 @@ comments: true
 	parent = parent.parentElement;
 	}
 </script>
+<!-- Mermaid -->
+<script type="module">
+	import mermaid from "{{- 'assets/mermaid/mermaid.esm.mjs' | relative_url -}}";
+	mermaid.initialize({ startOnLoad: true });
+</script>
 
 <!-- Waline -->
 <style>
