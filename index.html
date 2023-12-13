@@ -61,7 +61,7 @@ layout: home
 
 <!-- Waline -->
 <script type="module">
-	import { pageviewCount, commentCount } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+	import { pageviewCount, commentCount } from "{{- 'assets/waline/waline.mjs' | relative_url -}}";
     let serverURL = 'https://waline.xubiaosunny.top';
 	pageviewCount({
 		path: window.location.pathname,
