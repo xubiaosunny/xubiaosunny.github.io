@@ -132,7 +132,7 @@ server {
 
 在列表页不需要显示评论框，所以需要单独使用【浏览量统计】和【评论数统计】，通过`data-path`指定要统计的url。
 
-```html
+{% raw %}```html
 ...
 
 {% for post in paginator.posts %}
@@ -163,4 +163,4 @@ server {
         serverURL: serverURL,
     });
 </script>
-```
+```{% endraw %}
