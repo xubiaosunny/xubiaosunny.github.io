@@ -98,7 +98,7 @@ Postgres以及MySQl8.0都支持开窗函数，在进行分组排名或者分组�
 ```sql
 SELECT
     *, row_number() over ( 
-        PARTITION BY course_id ORDER BY score DESC
+        PARTITION BY course ORDER BY score DESC
     )  AS ranking
 FROM student_course_score;
 ```
