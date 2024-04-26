@@ -28,7 +28,7 @@ proc import datafile='student_course_score.csv'
     out=student_course_score
     dbms=csv
     replace;
-	getnames=yes;
+    getnames=yes;
 run;
 
 ```
@@ -39,7 +39,7 @@ run;
 
 ```sas
 proc sort data=student_course_score;
-	by name;
+    by name;
 run;
 
 data total_score;
@@ -57,10 +57,10 @@ run;
 
 ```sas
 proc sql;
-	create table total_score as
-	select name, sum(score) as total_score
-	from student_course_score
-	group by name;
+    create table total_score as
+    select name, sum(score) as total_score
+    from student_course_score
+    group by name;
 run;
 ```
 
@@ -70,13 +70,13 @@ run;
 
 ```sas
 proc sort data=student_course_score;
-	by course descending score;
+    by course descending score;
 run;
 
 data course_rank;
-	set student_course_score;
-	by course;
-	if first.course then ranking = 1;  /* 将第一个观察值的排名设为 1 */
+    set student_course_score;
+    by course;
+    if first.course then ranking = 1;  /* 将第一个观察值的排名设为 1 */
     else ranking + 1; /* 对于同一分组内的后续观察值，排名递增 */
     retain ranking;  /* 保持变量在观测之间的持久性 */
 run;
@@ -86,8 +86,8 @@ run;
 
 ```sas
 data course_top3;
-	set course_rank;
-	if ranking <= 3;
+    set course_rank;
+    if ranking <= 3;
 run;
 ```
 
@@ -97,7 +97,9 @@ Postgres以及MySQl8.0都支持开窗函数，在进行分组排名或者分组�
 
 ```sql
 SELECT
-    *, row_number() over ( PARTITION BY course_id ORDER BY score DESC)  AS ranking  
+    *, row_number() over ( 
+        PARTITION BY course_id ORDER BY score DESC
+    )  AS ranking
 FROM student_course_score;
 ```
 
