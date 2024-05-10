@@ -39,11 +39,11 @@ tags: TTL 路由器
 * 固件读取方式选用的是ftp，就是这个板子要通过ftp下载固件，所以要在本地起一个ftp服务，地址和输入的对应。
 * 板子上的引脚注意不要松动，可以焊接上，我是使用皮筋向一个方向拉紧固定的，防止刷机过程中断开。
 
-### 开启SSH
+### 开启SSH服务
 
-这里的降级固件用的是上面恩山帖子里提供的，具体版本我也没看是哪个版本。但我是进不去`http://192.168.68.1/cgi-bin/luci/`这个OpenWRT原始的后台界面，显示forbidden。但是这个降级估计也提供了开始ssh的方式。
+这里的降级固件用的是上面恩山帖子里提供的，具体版本我也没看是哪个版本。但我是进不去`http://192.168.68.1/cgi-bin/luci/`这个OpenWRT原始的后台界面，显示forbidden。但是这个降级固件也提供了开启ssh服务的方式。
 
-先登录鲁班后台，按F12（或者右键-检查），进入console控制台，输入以下代码直接开启ssh
+先登录鲁班后台，按F12（或者右键-检查），进入console控制台，输入以下代码直接开启ssh服务
 
 ```javascript
 $.ajax({
@@ -70,7 +70,7 @@ $.ajax({
 
 不过现在高版本的chrome或者edge都不让直接在控制台复制粘贴，会报如下警告
 
-```none
+```
 Warning: Don't paste code into the DevTools Console that you don't understand or haven't reviewed yourself. This could allow attackers to steal your identity or take control of your computer. Please type 'allow pasting' below and hit Enter to allow pasting.
 ```
 
@@ -80,7 +80,7 @@ Warning: Don't paste code into the DevTools Console that you don't understand or
 
 使用ssh登录到路由器
 
-```none
+```bash
 ssh root@192.168.68.1
 ```
 
