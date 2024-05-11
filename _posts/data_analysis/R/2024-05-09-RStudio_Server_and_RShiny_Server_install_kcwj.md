@@ -99,6 +99,11 @@ SELINUX=disabled
 
 账户认证使用linux系统PAM，可以使用`useradd`命令来创建用户。
 
+```bash
+useradd -m -s /bin/bash testuser
+passwd testuser
+```
+
 #### Shiny Server
 
 浏览器访问 `http://<your_ip>:3838`
@@ -125,12 +130,13 @@ Dockerfile
 
 ```Dockerfile
 FROM debian:12
-RUN sed -i 's@deb.debian.org@mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources
-RUN apt update -y && apt install -y r-base gdebi-core wget procps
-RUN wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2024.04.0-735-amd64.deb
-RUN gdebi rstudio-server-2024.04.0-735-amd64.deb
 
-ENTRYPOINT ["/usr/lib/rstudio-server/bin/rserver --server-daemonize=0"]
+RUN sed -i 's@deb.debian.org@mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources
+RUN apt update -y && apt install -y r-base gdebi-core wget
+RUN wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2024.04.0-735-amd64.deb
+RUN gdebi --non-interactive rstudio-server-2024.04.0-735-amd64.deb
+
+ENTRYPOINT ["/usr/lib/rstudio-server/bin/rserver", "--server-daemonize=0"]
 ```
 
 ### Shiny Server
@@ -139,12 +145,13 @@ Dockerfile
 
 ```Dockerfile
 FROM debian:12
-RUN sed -i 's@deb.debian.org@mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources
-RUN apt update -y && apt install -y r-base gdebi-core wget procps
-RUN su - -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
-RUN su - -c "R -e \"install.packages('rmarkdown', repos='https://cran.rstudio.com/')\""
-RUN wget https://download3.rstudio.org/ubuntu-18.04/x86_64/shiny-server-1.5.22.1017-amd64.deb
-RUN gdebi shiny-server-1.5.22.1017-amd64.deb
 
-ENTRYPOINT ["/opt/shiny-server/bin/shiny-server --verbose"]
+RUN sed -i 's@deb.debian.org@mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources
+RUN apt update -y && apt install -y r-base gdebi-core wget
+RUN su - -c "R -e \"install.packages('shiny', repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')\""
+RUN su - -c "R -e \"install.packages('rmarkdown', repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')\""
+RUN wget https://download3.rstudio.org/ubuntu-18.04/x86_64/shiny-server-1.5.22.1017-amd64.deb
+RUN gdebi --non-interactive shiny-server-1.5.22.1017-amd64.deb
+
+ENTRYPOINT ["/opt/shiny-server/bin/shiny-server", "--verbose"]
 ```
