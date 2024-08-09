@@ -8,7 +8,7 @@ tags: python
 
 ## MacOS上问题解决
 
-> 之前安装其实没有这么麻烦，用brew安装依赖会比MacPorts好很多解决依赖方面。但是没办法老Mac版本brew不支持了，难受
+> 之前安装其实没有这么麻烦，用brew安装依赖会比MacPorts好很多在解决依赖方面。但是没办法老Mac版本brew不支持了，难受
 
 mysqlclient 在v2.2.0后需要依赖`pkg-config`，所以在执行`pip`进行安装的时候一般都会报以下错误
 
@@ -33,7 +33,7 @@ sudo port install pkgconfig
 # brew
 brew install mysql-client
 
-# MacPorts直接安装完整mysql，其中包含mysql
+# MacPorts直接安装完整mysql，其中包含mysqlclient需要的动态库等
 sudo port install mysql
 ```
 
