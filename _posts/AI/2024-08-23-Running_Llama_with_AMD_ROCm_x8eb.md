@@ -16,7 +16,7 @@ tags: AI 大模型 Llama ROCm
 
 ## **ROCm安装**
 
-**ROCm支持以下linux系统和内核，最好安装官方的来。本来想用debian的，还是别给自己找事做了😄**
+ROCm支持以下linux系统和内核，最好安装官方的来。本来想用debian的，还是别给自己找事做了😄
 
 | Operating system | Kernel | Support |
 |----|----|----|
@@ -43,7 +43,7 @@ sudo apt update
 sudo apt install amdgpu-dkms rocm
 ```
 
-## 使用Llama.cpp
+## **使用Llama.cpp**
 
 `llama.cpp`在Github上下载的预编译文件只支持CPU运行。我是要用 `ROCm` 来加速，需要自己编译一下，也比较简单，详见文档：<https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md>
 
@@ -60,7 +60,7 @@ make GGML_HIPBLAS=1
 ./llama-server --host 0.0.0.0  -c 4096 -ngl 999 -m models/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf
 ```
 
-## 使用Ollama
+## **使用Ollama**
 
 Ollama安装直接支持ROCm，安装命令如下
 
@@ -99,7 +99,7 @@ ollama pull llama3.1
 ollama pull llama3.1
 ```
 
-## 验证是否GPU加速
+## **验证是否GPU加速**
 
 ROCm使用 `rocm-smi` 命令来查看GPU的状态，类似于CUDA的 `nvidia-smi`
 
@@ -107,7 +107,7 @@ ROCm使用 `rocm-smi` 命令来查看GPU的状态，类似于CUDA的 `nvidia-smi
 
 看到GPU的占用还是挺高的，说明已经用到GPU加速了，同时也可以看看CPU占用，正常用了GPU计算的话CPU占用就相对较低。
 
-## 参考链接
+## **参考链接**
 
 * <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html>
 * <https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md>
