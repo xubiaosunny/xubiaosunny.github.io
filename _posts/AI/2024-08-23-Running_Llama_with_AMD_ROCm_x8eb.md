@@ -96,7 +96,7 @@ ollama pull llama3.1
 运行 `llama3.1` 
 
 ```bash
-ollama pull llama3.1
+ollama run llama3.1
 ```
 
 ## **验证是否GPU加速**
