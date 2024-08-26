@@ -107,8 +107,52 @@ ROCm使用 `rocm-smi` 命令来查看GPU的状态，类似于CUDA的 `nvidia-smi
 
 看到GPU的占用还是挺高的，说明已经用到GPU加速了，同时也可以看看CPU占用，正常用了GPU计算的话CPU占用就相对较低。
 
+## **额外的问题解决**
+
+安装完 `ROCm`，在linux桌面操作，系统应用如设置、文件、监视器等都打不开，火狐浏览器还可以打开。查看syslog发现以下日志。
+
+```
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL fatal: DRI driver not from this Mesa build ('24.2.0-devel' vs '24.0.9-0ubuntu0.1')
+```
+
+查看mesa版本
+
+```bash
+dpkg -l | grep mesa
+```
+
+看到版本是 `24.0.9-0ubuntu0.1`
+
+```
+ii  libegl-mesa0:amd64                            24.0.9-0ubuntu0.1                        amd64        free implementation of the EGL API -- Mesa vendor library
+ii  libgl1-amdgpu-mesa-dri:amd64                  1:24.2.0.60200-2009582.24.04             amd64        free implementation of the OpenGL API -- DRI modules
+ii  libgl1-amdgpu-mesa-glx:amd64                  1:24.2.0.60200-2009582.24.04             amd64        free implementation of the OpenGL API -- GLX runtime
+ii  libgl1-mesa-dri:amd64                         24.0.9-0ubuntu0.1                        amd64        free implementation of the OpenGL API -- DRI modules
+ii  libglapi-amdgpu-mesa:amd64                    1:24.2.0.60200-2009582.24.04             amd64        free implementation of the GL API -- shared library
+ii  libglapi-mesa:amd64                           24.0.9-0ubuntu0.1                        amd64        free implementation of the GL API -- shared library
+ii  libglu1-mesa:amd64                            9.0.2-1.1build1                          amd64        Mesa OpenGL utility library (GLU)
+ii  libglx-mesa0:amd64                            24.0.9-0ubuntu0.1                        amd64        free implementation of the OpenGL API -- GLX vendor library
+ii  mesa-amdgpu-va-drivers:amd64                  1:24.2.0.60200-2009582.24.04             amd64        Mesa VA-API video acceleration drivers
+ii  mesa-common-dev:amd64                         24.0.9-0ubuntu0.1                        amd64        Developer documentation for Mesa
+ii  mesa-va-drivers:amd64                         24.0.9-0ubuntu0.1                        amd64        Mesa VA-API video acceleration drivers
+ii  mesa-vdpau-drivers:amd64                      24.0.9-0ubuntu0.1                        amd64        Mesa VDPAU video acceleration drivers
+ii  mesa-vulkan-drivers:amd64                     24.0.9-0ubuntu0.1                        amd64        Mesa Vulkan graphics drivers
+```
+
+根据日志，升级mesa到 `24.2.0`应该就可以。解决方法如下
+
+```bash
+sudo add-apt-repository ppa:kisak/kisak-mesa
+sudo apt update
+sudo apt upgrade
+```
+
 ## **参考链接**
 
 * <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html>
 * <https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md>
 * <https://blog.lyric.im/p/using-llamacpp-to-run-llama-2-using-amd-radeon-rx-6900-for-gpu-acceleration>
+* <https://askubuntu.com/questions/1420736/settings-window-does-not-open-in-ubuntu-22-04>
