@@ -65,6 +65,22 @@ docker rmi dockerhub.example.com/node:20
 docker run --rm -it node:20
 ```
 
+还可以直接配置成默认仓库，编辑 `/etc/docker/daemon.json`，写入以下内容
+
+```json
+{
+  "registry-mirrors": [
+    "dockerhub.example.com"
+  ]
+}
+```
+
+和直接使用Docker Hub无区别
+
+```bash
+docker pull node:20
+docker run --rm -it node:20
+```
 
 参考链接：
 
