@@ -76,7 +76,7 @@ tags: 黑苹果 OpenCore Intel 10400
 解决办法是先删除司波图的EFI中多余的驱动`FakePCIID_Intel_HDMI_Audio.kext`和`FakePCIID.kext`（同时也在config.list中删除），
 然后使用缓存帧`00009B3E`来进行相应配置，详细如下：
 
-![](\assets\images\post\1605691620578.jpg)
+![](\assets\images\post\1605691620578.jpeg)
 
 其中的`framebuffer-con0-*`和`framebuffer-con2-*`不用配置也可以，`framebuffer-con1-*`是昂达这个板子的HDMI的配置。
 

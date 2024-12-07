@@ -21,7 +21,7 @@ tags: 黑苹果 MacOS 网卡
 ### 2 编辑 config.plist
 **Kernel** → **Add** 中，依次添加 `AMFIPass.kext` 、 `IOSkywalkFamily.kext` 、 `IO80211FamilyLegacy.kext` 这三个kext。
 
-![](\assets\images\post\截屏2024-12-06 22.26.17.png)
+![](\assets\images\post\截屏2024-12-06 22.26.17.jpg)
 
 **Kernel** → **Block** 中，添加 `com.apple.iokit.IOSkywalkFamily` 。
 

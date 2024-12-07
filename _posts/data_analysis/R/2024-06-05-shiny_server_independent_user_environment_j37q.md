@@ -127,7 +127,7 @@ Execution halted
 
 然后在浏览器上访问路径也有变化，我的例子的路径为`/users/pve/test-shiny/`，路径规则为`/users/<username>/<shiny-app-name>/`.
 
- ![](/assets/images/post/截屏2024-06-05 17.01.08.png)
+ ![](/assets/images/post/截屏2024-06-05 17.01.08.jpg)
 
 ## 我的的展望
 

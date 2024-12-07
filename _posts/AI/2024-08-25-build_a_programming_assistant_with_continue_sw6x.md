@@ -79,7 +79,7 @@ vim ~/.continue/config.json
 
 ## **使用效果**
 
-![](/assets/images/post/截屏2024-08-26 10.21.03.png)
+![](/assets/images/post/截屏2024-08-26 10.21.03.jpg)
 
 同时运行三个模型16G显存也有富裕，在 `ROCm` 的加速下，对话和代码补全的生成速度也是相当的快。
 
