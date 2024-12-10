@@ -70,10 +70,12 @@ docker run --rm -it node:20
 ```json
 {
   "registry-mirrors": [
-    "dockerhub.example.com"
+    "https://dockerhub.example.com"
   ]
 }
 ```
+
+> ⚠️注意：需要写上协议头 `https://` ，不能只写域名 `dockerhub.example.com` ，否则启动docker会报如下错误 `failed to start daemon: invalid mirror: unsupported scheme "" in "dockerhub.example.com"`
 
 和直接使用Docker Hub无区别
 
@@ -87,3 +89,4 @@ docker run --rm -it node:20
 * <https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/>
 * <https://docs.docker.com/engine/daemon/proxy/#httphttps-proxy>
 * <https://github.com/cmliu/CF-Workers-docker.io>
+* <https://blog.csdn.net/weixin_43025542/article/details/123040938>
