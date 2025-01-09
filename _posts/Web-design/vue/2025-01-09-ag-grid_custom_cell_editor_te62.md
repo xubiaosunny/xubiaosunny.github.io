@@ -128,7 +128,6 @@ defineExpose({
   <ag-grid-vue
     :rowData="rowData"
     :columnDefs="colDefs"
-    @cellValueChanged="onCellValueChanged"
   >
   </ag-grid-vue>
 </template>
