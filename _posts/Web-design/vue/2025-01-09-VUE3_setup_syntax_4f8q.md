@@ -12,7 +12,7 @@ tags: vue
 
 使用 `setup` 语法糖，定义的变量、方法等自动暴露给 `template`
 
-```vue
+```vue{% raw %}
 <script setup>
 import {ref} from 'vue'
 const msg = ref('11111')
@@ -25,11 +25,11 @@ const doSomething = () => {
   <h1>{{ msg }}</h1>
   <button @click="doSomething" >do</button>
 </template>
-```
+{% endraw %}```
 
 不使用 `setup` 语法糖，则需要 `return` 来暴露给 `template` ，否则在 `template` 中无法调用
 
-```vue
+```vue{% raw %}
 <script>
 import {ref} from 'vue'
 export default {
@@ -47,7 +47,7 @@ export default {
   <h1>{{ msg }}</h1>
   <button @click="doSomething" >do</button>
 </template>
-```
+{% endraw %}```
 
 ## **生命周期钩子函数**
 
@@ -83,7 +83,7 @@ export default {
 
 使用 `setup` 语法糖，使用 `defineProps` 
 
-```vue
+```vue{% raw %}
 <template>
   <div>{{ foo }}</div>
 </template>
@@ -93,11 +93,11 @@ const props = defineProps({
   foo: String
 })
 </script>
-```
+{% endraw %}```
 
 不使用 `setup` 语法糖，通过 `props` 来声明
 
-```vue
+```vue{% raw %}
 <template>
   <div>{{ foo }}</div>
 </template>
@@ -112,7 +112,7 @@ export default {
   },
 }
 </script>
-```
+{% endraw %}```
 
 > 类似的 `emits` 使用 `defineEmits` 来声明
 
