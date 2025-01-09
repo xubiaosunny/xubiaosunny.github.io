@@ -85,7 +85,7 @@ defineExpose({
 
 就是单元格在非编辑状态（展示）使用的组件 `agAntdMultiSelectRenderer.vue`
 
-```vue
+```vue{% raw %}
 <template>
   <template v-for="(item, index) of value" :key="item">
     <span>{{ labelMap[item] || item }}<span v-if="index < value.length - 1">,</span></span>
@@ -117,7 +117,7 @@ defineExpose({
 
 <style scoped>
 </style>
-```
+{% endraw %}```
 
 > `refresh` 方法会在数据变动时调用，可以加入一些自定义的逻辑
 
