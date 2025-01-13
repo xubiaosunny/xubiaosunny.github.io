@@ -17,7 +17,10 @@ timezone: Asia/Shanghai
 title: 徐彪的网络日志
 email: xubiaosunny@163.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This is xubiao's blog!
+  编程没有鄙视链，能解决问题的就是好技术；
+  工作莫问意义，能赚到钱便是好差事；
+  巧妇难为无米之炊，但我要吃的是大饼，有面也行；
+  Anyway ~ 人生苦短，我用Python！
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://xubiaosunny.top" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xubiaosunny
