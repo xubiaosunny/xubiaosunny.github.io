@@ -54,6 +54,26 @@ cd llama.cpp
 make GGML_HIPBLAS=1
 ```
 
+---
+
+> 2025.02.09 更新 
+
+使用 `make` 构建现在会报如下错误
+
+```bash
+Makefile:2: *** The Makefile build is deprecated. Use the CMake build instead. For more details, see https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md.  Stop
+```
+
+按照当前文档使用 `cmake` 构建
+
+```bash
+HIPCXX="$(hipconfig -l)/clang" HIP_PATH="$(hipconfig -R)" \
+    cmake -S . -B build -DGGML_HIP=ON -DAMDGPU_TARGETS=gfx1030 -DCMAKE_BUILD_TYPE=Release \
+    && cmake --build build --config Release -- -j 16
+```
+
+---
+
 我这里使用的Llama3.1-8B模型（[Meta-Llama-3.1-8B-Instruct.Q8_0.gguf](https://huggingface.co/QuantFactory/Meta-Llama-3.1-8B-Instruct-GGUF)）
 
 ```bash
