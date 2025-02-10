@@ -42,7 +42,7 @@ layout: home
 
 <!-- paginate -->
 <nav aria-label="...">
-    <ul class="pagination">
+    <ul class="pagination" style="flex-wrap: wrap;">
         <li class="page-item {% if paginator.previous_page == nil %}disabled{% endif %}">
         <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fas fa-angle-double-left"></i></a>
         </li>
