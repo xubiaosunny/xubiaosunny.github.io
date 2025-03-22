@@ -44,7 +44,7 @@ fastapi_app/
 from fastapi import FastAPI
 from core.config import settings
 from core.middlewares import setup_middlewares
-from routers import account, lingo
+from routers import home, users
 from core.event import lifespan
 
 app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION, lifespan=lifespan)
@@ -53,8 +53,8 @@ app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION, lifespan=li
 setup_middlewares(app)
 
 # 注册路由
-app.include_router(account.router)
-app.include_router(lingo.router)
+app.include_router(home.router)
+app.include_router(users.router)
 
 ```
 
