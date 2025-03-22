@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "从 FastAPI 到 django-ninja：现代 Python Web 框架的探索与实践"
+title: "从 FastAPI 到 Django Ninja：现代 Python Web 框架的探索与实践"
 date: 2025-03-22 10:35:15 +0800
 categories: 技术
 tags: FastAPI Django-Ninja Django
