@@ -185,7 +185,7 @@ def login(request, payload: LoginSchema):
 
 > NinjaAPI 实例添加了认证，但是下面的某个API不需要认证，可以在装饰器传入参数 `auth=None`
 
-#### `api/auth/views.py`
+#### `api/auth/schemas.py`
 
 ```python
 from typing_extensions import Self
